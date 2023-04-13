@@ -1,0 +1,36 @@
+@import '../../../variables.scss';
+
+.jewelry{
+    padding: 80px 0 70px 0;
+    width: 100%;
+    background-color: $colorWhite;
+    color: $colorTextDarkGrey;
+
+    .jewelry-bg{
+        width: 100%;
+        height: 300px;
+        background-image: url(../../../assets/img/FineJewelry.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        .jewelry-title{
+            background-color: $colorWhite;
+            width: 22%;
+            padding: 25px;
+            margin-left: 70px;
+            cursor: pointer;
+            h3{
+                text-transform: uppercase;
+                font-size: 30px;
+                margin-bottom: 10px;
+                line-height: 1;
+            }
+            p{
+                font-size: 13px;
+                color: $colorTextGrey;
+            }
+        }
+    }
+}

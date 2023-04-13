@@ -1,0 +1,95 @@
+@import '../../../variables.scss';
+
+.prime-section{
+    width: 100%;
+    padding: 80px 0 0 0;
+
+    //<Swiper/>
+    .swiper{
+        width: 100%;
+        height: 300px;
+        .swiper-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            transition-property: transform;
+            transition-timing-function: var(--swiper-wrapper-transition-timing-function,initial);
+            box-sizing: content-box;
+            //<SwiperSlide/>
+            .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: $colorWhite;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    z-index: 1;
+                }
+            }
+        }
+        .swiper-button-prev{
+            width: 40px;
+            height: 50px;
+            background-color: rgb(255 255 255 / 70%);
+            left: 0;
+            border-radius: 0 25px 25px 0;
+            &::after{
+                width: 38px;
+                height: 40px;
+                background-image: url(../../../assets/img/arrow-left.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                content: "";
+                position: absolute;
+                top: 6px;
+                left: 2px;
+            }
+        }
+        .swiper-button-next{
+            width: 40px;
+            height: 50px;
+            background-color: rgb(255 255 255 / 70%);
+            right: 0;
+            border-radius: 25px 0 0 25px;
+            &::after{
+                width: 38px;
+                height: 40px;
+                background-image: url(../../../assets/img/arrow-right.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                content: "";
+                position: absolute;
+                top: 6px;
+                right: 2px;
+            }
+        }
+        .prime-div{
+            background-color: $colorWhite;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+            width: 22%;
+            padding: 25px;
+            margin-left: 70px;
+            cursor: pointer;
+            h3{
+                font-size: 30px;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                line-height: 1;
+            }
+            p{
+                font-size: 13px;
+                color: $colorTextGrey;
+            }
+        }
+    }
+}

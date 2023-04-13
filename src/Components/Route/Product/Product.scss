@@ -1,0 +1,217 @@
+@import '../../../variables.scss';
+
+.product-div{
+    width: 100%;
+    padding: 150px 0 70px 0;
+    background-color: $colorWhite;
+    color: $colorTextDarkGrey;
+
+    .product-card{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .product-images{
+            width:60%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        .product-info{
+            width: 40%;
+            padding-left: 30px;
+
+            h2{
+                font-size: 40px;
+                font-weight: 400;
+            }
+            h4{
+                font-size: 22px;
+                font-weight: 300;
+                color: $colorTextGrey;
+                margin: 10px 0;
+            }
+            .price{
+                font-size: 22px;
+            }
+            .btn-buy{
+                margin: 20px 0 50px 0;
+            }
+
+            .accordion-info{
+                display: flex;
+                flex-direction: column;
+                .info{
+                    width: 100%;
+                    position: relative;
+                    &::after{
+                        width: 100%;
+                        height: 1px;
+                        background-color: $colorTextGrey;
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                    }      
+                    .show-info{
+                        padding: 15px 0;
+                        position: relative; 
+                        cursor: pointer;
+            
+                        h4{
+                            color: $colorTextDarkGrey;
+                            font-size: 18px;
+                            font-weight: 500;
+                        }
+                        .btn-arrows{
+                            width: 30px;
+                            height: 30px;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                            position: absolute;
+                            content: "";
+                            top: 21px;
+                            right: 0;
+                            cursor: pointer;
+                        }
+                        .btn-down{
+                            background-image: url(../../../assets/img/arrow-down.svg);
+                        }
+                        .btn-up{
+                            background-image: url(../../../assets/img/arrow-up.svg);
+                        }
+                    }
+                    .show-text{
+                        padding-bottom: 20px;
+                        p{
+                            color: $colorTextGrey;
+                            font-size: 15px;
+                            line-height: 1.6;
+                        }
+
+                        .specification{
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 12px;
+                            span{
+                                color: $colorTextDarkGrey;
+                                font-size: 15px;
+                                line-height: 1.6;
+                                font-weight: 500;
+                            }
+                        }
+                        .specification:last-child{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .feachures-items{
+        margin-top: 70px;
+        width: 100%;
+        padding: 40px 20px;
+        background-color: $colorBlack;
+        color: $colorWhite;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .items{
+            display: flex;
+            flex-direction: column;
+            padding: 0 30px;
+            img{
+                width: 25px;
+                height: 25px;
+                align-self: center;
+            }
+            h3{
+                margin: 20px 0;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 17px;
+            }
+            p{
+                color: $colorTextGrey;
+                font-size: 15px;
+                line-height: 1.4;
+                text-align: center;
+            }
+        }
+    }
+
+    .other-info-div{
+        margin-top: 70px;
+        // .left-div{
+        //     margin-left: 80px;
+        // }
+        // .right-div{
+        //     padding-right: 80px;
+        // }
+        .other-info{
+            background-color: $bgColorGrey;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    
+            img{
+                width: 30%;
+            }
+            .info{
+                width: 40%;
+                padding: 0 30px;
+                h2{
+                    font-size: 30px;
+                    text-transform: uppercase;
+                    margin-bottom: 15px;
+                }
+                p{
+                    color: $colorTextGrey;
+                    font-size: 15px;
+                    line-height: 1.6;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+
+    .other-title{
+        width: 100%;
+        height: 500px;
+        margin-top: 70px;
+        padding-left: 50px;
+        background-image: url(../../../assets/img/bg-product-other.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: $colorWhite;
+        display: flex;
+        flex-direction: column;
+        justify-content:  center;
+        h2{
+            width: 40%;
+            font-size: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #99d5e6;
+        }
+        h4{
+            width: 40%;
+            margin: 10px 0;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        // .btn-shop-now-blue{}
+    }
+}

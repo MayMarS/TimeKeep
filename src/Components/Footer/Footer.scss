@@ -1,0 +1,118 @@
+@import '../../variables.scss';
+
+footer{
+    background-color: $colorWhite;
+    padding: 70px 50px;
+    color: $colorTextDarkGrey;
+    position: relative;
+    &::after{
+        width: 100%;
+        height: 1px;
+        background-color: #e4e4e4;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .footer-main{
+        display: flex;
+        justify-content: space-between;
+
+        .footer-contact{
+            display: flex;
+            flex-direction: column;
+            
+            .footer-logo{
+                width: 120px;
+                height: 30px;
+                background-image: url('../../assets/img/logo.svg');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .footer-email{
+                color: $colorTextDarkGrey;
+                font-size: 15px;
+                margin: 20px 0;
+            }
+            .footer-social{
+                display: flex;
+                a{
+                    display: flex;
+                    margin-right: 15px;
+                    img{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+        .footer-menu{
+            width: 60%;
+            display: flex;
+            justify-content: space-around;
+            ul{
+                list-style-type: none;
+                padding: 0;
+                font-size: 15px;
+                li{
+                    color: $colorTextDarkGrey;
+                    margin-bottom: 16px;
+                    &:first-child{
+                        color: #b9b9b9;
+                    }
+                    a{
+                        color: $colorTextDarkGrey;
+                    }
+                }
+            }
+        }
+        .footer-news{
+            p{
+                font-size: 16px;
+            }
+            form{
+                position: relative;
+                input{
+                    width: 100%;
+                    margin: 15px 0;
+                    height: 50px;
+                    padding: 12px;
+                    background: $bgColorGrey;
+                    border: none;
+                    outline: none;
+                    color: $colorTextDarkGrey;
+                    font-size: 16px;
+                    &::placeholder {
+                        font-size: 16px;
+                        color: $colorTextGrey;
+                    }
+                }
+                .btn-input{  
+                    position: absolute;
+                    top: 15px;
+                    right: 12px;
+                    background-color: transparent;
+                    border: none;
+                    padding: 0;
+                    &::before{
+                        width: 20px;
+                        height: 20px;
+                        background-image: url(../../assets/img/letter.svg);
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        content: "";
+                        transition: .3s;
+                    }
+                    &:hover {
+                        &::before{
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

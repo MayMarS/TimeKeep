@@ -1,0 +1,174 @@
+@import '../../../variables.scss';
+
+.feachures{
+    width: 100%;
+    background-color: $colorWhite;
+    color: $colorTextDarkGrey;
+
+    .feachures-items{
+        width: 100%;
+        padding: 40px 20px;
+        background-color: $colorBlack;
+        color: $colorWhite;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .item{
+            display: flex;
+            flex-direction: column;
+            padding: 0 30px;
+            img{
+                width: 25px;
+                height: 25px;
+                align-self: center;
+            }
+            h3{
+                margin: 20px 0;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 17px;
+            }
+            p{
+                color: $colorTextGrey;
+                font-size: 15px;
+                line-height: 1.4;
+                text-align: center;
+            }
+        }
+    }
+    .feachures-info{
+        width: 100%;
+        
+        .info{
+            height: 550px;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .left{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .right{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .text{
+                padding: 0 50px;
+                text-align: center;
+                h3{
+                    text-transform: uppercase;
+                    font-size: 22px;
+                    margin-bottom: 30px;
+                }
+                p{
+                    color: $colorTextGrey;
+                    font-size: 16px;
+                    line-height: 1.8;
+                }
+            }
+        }
+        .jewelry-div{
+            width: 100%;
+            padding-top: 40px;
+            position: relative;
+            &::before{
+                width: 100%;
+                height: 1px;
+                background-color: #e4e4e4;
+                content: "";
+                position: absolute;
+                top: -40px;
+                left: 0;
+            }
+
+            .feachures-jewelry-first{
+                padding: 0 50px;
+                width: 100%;
+                height: 500px;
+                background-image: url(../../../assets/img/bg-feachures-jewelry.jpg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: $colorTextGrey;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h2{
+                    font-size: 48px;
+                    text-transform: uppercase;
+                }
+                p{
+                    font-size: 18px;
+                    margin: 10px 0;
+                }
+                // .btn-shop-now-grey{}
+            }
+            .feachures-jewelry-second{
+                background-color: $colorWhite;
+                padding: 0 50px;
+                position: relative;
+                img{
+                    width: 350px;
+                    height: auto;
+                    position: absolute;
+                    top: -85px;
+                    left: 50px;
+                }
+                .second-div{
+                    width: 100%;
+                    height: 300px;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: 0 0 75px 410px;
+                    h3{
+                        font-size: 28px;
+                        text-transform: uppercase;
+                    }
+                    p{
+                        color: $colorTextGrey;
+                        font-size: 16px;
+                        line-height: 1.8;
+                    }
+                }
+            }
+        }
+    }
+    .features-final-div{
+        width: 100%;
+        padding: 40px 20px;
+        background-color: $colorBlack;
+        color: $colorWhite;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .final{
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            img{
+                width: 30px;
+                height: 30px;
+            }
+            h4{
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 300;
+                margin-left: 15px;
+            }
+        }
+    }
+}

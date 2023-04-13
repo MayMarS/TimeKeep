@@ -1,0 +1,146 @@
+@import './variables.scss';
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  color: $colorTextDarkGrey;
+  background-color: $bgColorGrey;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container{
+  max-width: 1280px;
+  margin: 0 auto;
+}
+a{
+  text-decoration: none;
+  color: $colorTextDarkGrey;
+  transition: .3s;
+}
+h1, h2, h3, h4{
+    font-weight: 500;
+}
+button{
+  width: fit-content;
+  height: 50px;
+  padding: 0 50px 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .3s; 
+}
+
+.btn-buy{
+    height: 40px;
+    background-color: $colorBlack;
+    border: 2px solid $colorBlack;
+    color: $colorWhite;
+    &:hover{
+        background-color: $colorWhite;
+        color: $colorBlack;
+    }
+}
+.btn-filter{
+    height: 40px;
+    padding: 0 50px 0 30px;
+    background-color: $colorWhite;
+    border: 1px solid $colorBlack;
+    color: $colorBlack;
+    position: relative;
+    &:hover{
+        background-color: $colorBlack;
+        color: $colorWhite;
+        &::after{
+            background-image: url(./assets/img/arrow-down-white.svg);
+        }
+    }
+    &::after{
+        width: 15px;
+        height: 15px;
+        background-image: url(./assets/img/arrow-down-black.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        content: "";
+        top: 11px;
+        right: 28px;
+        transition: .3s; 
+    }
+}
+.btn-sort{
+    height: 40px;
+    padding: 0 50px 0 30px;
+    background-color: $colorWhite;
+    border: 1px solid $colorBlack;
+    color: $colorBlack;
+    position: relative;
+    &:hover{
+        background-color: $colorBlack;
+        color: $colorWhite;
+        &::after{
+            background-image: url(./assets/img/arrow-down-white.svg);
+        }
+    }
+    &::after{
+        width: 15px;
+        height: 15px;
+        background-image: url(./assets/img/arrow-down-black.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        content: "";
+        top: 11px;
+        right: 28px;
+        transition: .3s; 
+    }
+}
+.btn-see-all{
+    height: 40px;
+    padding: 0 30px;
+    background-color: $colorBlack;
+    border: 2px solid $colorBlack;
+    color: $colorWhite;
+    &:hover{
+    background-color: $colorWhite;
+    color: $colorBlack;
+    }
+}
+.btn-shop-now-blue{
+    height: 60px;
+    padding: 0 30px;
+    margin-top: 10px;
+    font-size: 23px;
+    background-color: #99d5e6;
+    border: 2px solid #99d5e6;
+    border-radius: 20px;
+    color: $colorWhite;
+    &:hover{
+        background-color: transparent;
+        color: #99d5e6;
+    }
+}
+.btn-shop-now-grey{
+    height: 50px;
+    padding: 0 30px;
+    margin-top: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    color: $colorTextGrey;
+    border: 2px solid $colorTextGrey;
+    border-radius: 20px;
+    &:hover{
+        background-color: $colorTextGrey;
+        color: $colorWhite;
+    }
+}
+
