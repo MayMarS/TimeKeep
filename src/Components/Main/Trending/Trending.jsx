@@ -34,7 +34,6 @@ const Trending = () => {
                 <div className="products-btns">
                     <div className="filters-btns">
                         <SelectFilters />
-                        {/* <button className="btn-filter">Category</button> */}
                         <button className="btn-filter">Color</button>
                         <button className="btn-filter">Gender</button>
                         <button className="btn-see-all" onClick={showAllProducts}>See all</button>
