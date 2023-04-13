@@ -52,7 +52,7 @@
             img{
                 width: 100%;
                 height: auto;
-                margin-bottom: 30px;
+                margin-bottom: auto;
                 transition: .3s;
                 &:hover{
                     cursor: pointer;
@@ -61,6 +61,7 @@
             }
             h2{
                 font-size: 19px;
+                margin-top: 30px;
             }
             h3{
                 font-size: 15px;

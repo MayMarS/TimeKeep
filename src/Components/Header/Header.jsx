@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './Header.scss';
 
-const Link = (props) => {
+const LinkItem = (props) => {
     return (
         <NavLink to={props.link.adress}>{props.link.name}</NavLink>
     )
@@ -24,10 +24,10 @@ const Header = (props) => {
         setSticky(headerSticky);
     };
     
-    let headerLinks = props.links.map(link => <Link link={link}/>)
+    let headerLinks = props.links.map(link => <LinkItem link={link}/>)
     return (
         <header className={sticky}>
-            <a className="header-logo" href="#"></a>
+            <NavLink className="header-logo" to="/"></NavLink>
             <div className="header-nav">
                 <nav>
                     {headerLinks}

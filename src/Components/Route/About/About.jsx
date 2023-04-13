@@ -26,6 +26,7 @@ const Item = (props) => {
 const About = (props) => {
     let aboutItems = props.about.items.map(item => <Item item={item} />)
     let aboutBlocks = props.about.blocks.map(block => <Block block={block} />)
+    window.scrollTo(0,0);
     return (
         <section className="about">
             <div className="about-title">

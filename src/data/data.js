@@ -34,7 +34,7 @@ import linkedin from '../assets/img/linkedin.svg';
 let state = {
 
     header: {
-        links: [{name: "Home", adress: "/"}, {name: "Watches", adress: "/watches"}, {name: "Jewelry", adress: "/jewelry"}, 
+        links: [{name: "Home", adress: "/"}, {name: "Shop", adress: "/shop"}, {name: "Watches", adress: "/watches"}, {name: "Jewelry", adress: "/jewelry"}, 
                 {name: "About", adress: "/about"}, {name: "Contact", adress: "/contact"}]
     },
 

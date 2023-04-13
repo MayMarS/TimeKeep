@@ -6,6 +6,7 @@ import Trending from './Trending/Trending';
 import Feachures from './Feachures/Feachures';
 
 const Main = (props) => {
+    window.scrollTo(0,0);
     return (
         <main>
             <PrimeSection />

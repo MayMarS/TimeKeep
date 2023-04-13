@@ -99,6 +99,7 @@
                             justify-content: space-between;
                             margin-bottom: 12px;
                             span{
+                                display: block;
                                 color: $colorTextDarkGrey;
                                 font-size: 15px;
                                 line-height: 1.6;
@@ -106,6 +107,8 @@
                             }
                         }
                         .specification:last-child{
+                            display: flex;
+                            justify-content: space-between;
                             margin-bottom: 0;
                         }
                     }

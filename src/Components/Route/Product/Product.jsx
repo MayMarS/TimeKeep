@@ -21,6 +21,8 @@ const Product = (props) => {
                 setProduct(element);
             }
         })
+
+        window.scrollTo(0,0);
     }, [])
 
     const [isProductInCart, setIsProductInCart] = useState(false);

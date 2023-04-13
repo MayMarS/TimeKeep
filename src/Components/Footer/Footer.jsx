@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './Footer.scss';
 
 const Link = (props) => {
@@ -22,7 +23,7 @@ const Footer = (props) => {
         <footer>
             <div className="footer-main">
                 <div className="footer-contact">
-                    <a className="footer-logo" href="#"></a>
+                    <NavLink className="footer-logo" to="/"></NavLink>
                     <a className="footer-email" href="mailto:support@timekeep.com">support@timekeep.com</a>
                     <div className="footer-social">
                         {social}

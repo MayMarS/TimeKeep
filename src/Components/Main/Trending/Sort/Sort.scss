@@ -1,0 +1,85 @@
+@import '../../../../variables.scss';
+
+.sort-div{
+    color: $colorBlack;
+    position: relative;
+    margin-left: auto;
+    .sort-label{
+        width: 220px;
+        height: 44px;
+        padding: 0 30px;
+        background-color: $colorWhite;
+        border: 1px solid $colorBlack;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        transition: .1s;
+        &:hover{
+            background-color: $colorBlack;
+            color: $colorWhite;
+            cursor: pointer;
+            &::after{
+                background-image: url(../../../../assets/img/arrow-down-white.svg);
+            }
+            span{
+                color: $colorWhite;
+                font-weight: 300;
+            }
+        }
+        &::after{
+            width: 15px;
+            height: 15px;
+            background-image: url(../../../../assets/img/arrow-down-black.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            content: "";
+            top: 7px;
+            right: 30px;
+            transition: .3s;
+        }
+        p{
+            font-size: 12px;
+            color: $colorTextGrey;
+        }
+        span{
+            display: block;
+            font-size: 14px;
+            color: $colorBlack;
+        }
+
+    }
+    .sort-popup{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        li{
+            width: 100%;
+            height: 44px;
+            padding: 0 30px;
+            font-size: 14px;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            transition: .1s;
+        }
+        .sort{
+            background-color: $colorWhite;
+            border: 1px solid $colorBlack;
+            border-top: none;
+            color: $colorBlack;
+            &:hover{
+                background-color: $colorBlack;
+                color: $colorWhite;
+                cursor: pointer;
+            }
+        }
+        .active-sort{
+            background-color: $colorBlack;
+            color: $colorWhite;
+        }
+    }
+}

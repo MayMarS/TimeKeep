@@ -1,0 +1,20 @@
+@import '../../../../variables.scss';
+
+.filters-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .btn-filter{
+        margin-right: 15px;
+        padding: 0 30px;
+    }
+    .active-category{
+        margin-right: 15px;
+        height: 44px;
+        padding: 0 30px;
+        background-color: $colorBlack;
+        border: 1px solid $colorBlack;
+        color: $colorWhite;
+    }
+}

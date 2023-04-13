@@ -5,8 +5,8 @@ import Select from 'react-select';
 const optionsCategory = [
     {value: "menWatches", label: "Men's Watches"},
     {value: "womenWatches", label: "Women's Watches"},
-    {value: "necklaces", label: "Necklaces"},
-    {value: "bracelets", label: "Bracelets"}
+    {value: "nemJewelry", label: "Men's Jewelry"},
+    {value: "womenJewelry", label: "Women's Jewelry"}
 ]
 
 const SelectFilters = () => {

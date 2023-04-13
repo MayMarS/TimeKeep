@@ -19,17 +19,15 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        .filters-btns{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .btn-filter{
-                margin-right: 15px;
+        //.filters-div{}
+        .see-all-link{
+            font-size: 14px;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline;
             }
         }
-        // .btn-sort{}
+        //.sort-div{}
     }
     .products-div{
         margin-top: 50px;
@@ -52,7 +50,7 @@
             img{
                 width: 100%;
                 height: auto;
-                margin-bottom: 30px;
+                margin-bottom: auto;
                 transition: .3s;
                 &:hover{
                     cursor: pointer;
@@ -61,6 +59,7 @@
             }
             h2{
                 font-size: 19px;
+                margin-top: 30px;
             }
             h3{
                 font-size: 15px;

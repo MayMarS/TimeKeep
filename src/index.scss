@@ -30,14 +30,17 @@ h1, h2, h3, h4{
 button{
   width: fit-content;
   height: 50px;
-  padding: 0 50px 0 50px;
+  padding: 0 50px;
+  color: $colorBlack;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: .3s; 
 }
-
 .btn-buy{
     height: 40px;
     background-color: $colorBlack;
@@ -49,63 +52,18 @@ button{
     }
 }
 .btn-filter{
-    height: 40px;
-    padding: 0 50px 0 30px;
+    height: 44px;
+    padding: 0 30px;
     background-color: $colorWhite;
     border: 1px solid $colorBlack;
     color: $colorBlack;
-    position: relative;
     &:hover{
         background-color: $colorBlack;
         color: $colorWhite;
-        &::after{
-            background-image: url(./assets/img/arrow-down-white.svg);
-        }
-    }
-    &::after{
-        width: 15px;
-        height: 15px;
-        background-image: url(./assets/img/arrow-down-black.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        position: absolute;
-        content: "";
-        top: 11px;
-        right: 28px;
-        transition: .3s; 
-    }
-}
-.btn-sort{
-    height: 40px;
-    padding: 0 50px 0 30px;
-    background-color: $colorWhite;
-    border: 1px solid $colorBlack;
-    color: $colorBlack;
-    position: relative;
-    &:hover{
-        background-color: $colorBlack;
-        color: $colorWhite;
-        &::after{
-            background-image: url(./assets/img/arrow-down-white.svg);
-        }
-    }
-    &::after{
-        width: 15px;
-        height: 15px;
-        background-image: url(./assets/img/arrow-down-black.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        position: absolute;
-        content: "";
-        top: 11px;
-        right: 28px;
-        transition: .3s; 
     }
 }
 .btn-see-all{
-    height: 40px;
+    height: 44px;
     padding: 0 30px;
     background-color: $colorBlack;
     border: 2px solid $colorBlack;
