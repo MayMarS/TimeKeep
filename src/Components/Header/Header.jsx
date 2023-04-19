@@ -40,7 +40,7 @@ const Header = (props) => {
     let headerLinks = props.links.map(link => <LinkItem link={link}/>)
     return (
         <header className={sticky}>
-            <NavLink className="header-logo" to="/Home"></NavLink>
+            <NavLink className="header-logo" to="/"></NavLink>
             <div className="header-nav">
                 <nav>
                     {headerLinks}

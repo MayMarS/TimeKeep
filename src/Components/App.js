@@ -21,7 +21,7 @@ function App(props) {
             <Header links={props.state.header.links}/>
             <Breadcrumbs />
             <Routes>
-                <Route path="/Home" element={<Main main={props.state.main} />} />
+                <Route path="/" element={<Main main={props.state.main} />} />
                 <Route path="/Shop" element={<Products />} />
                 <Route path="/Shop/Product/:productId" element={<ProductCard product={props.state.product}/>} /> 
                 <Route path="/Shop/Watches" element={<Watches />} /> 
