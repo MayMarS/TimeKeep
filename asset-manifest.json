@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TimeKeep/static/css/main.b21cbddd.css",
-    "main.js": "/TimeKeep/static/js/main.b0ee882a.js",
+    "main.js": "/TimeKeep/static/js/main.d9a27c0a.js",
     "static/media/bg-about.jpg": "/TimeKeep/static/media/bg-about.15f000eebef866b79335.jpg",
     "static/media/MenWatches-2023.jpg": "/TimeKeep/static/media/MenWatches-2023.6da0d89498fc85ada9d6.jpg",
     "static/media/FineJewelry.jpg": "/TimeKeep/static/media/FineJewelry.2528e6fe9c41e00630d5.jpg",
@@ -47,10 +47,10 @@
     "static/media/arrow-up.svg": "/TimeKeep/static/media/arrow-up.74a4a75d1dcbb163bda3.svg",
     "static/media/minimalism.svg": "/TimeKeep/static/media/minimalism.332e14e21c82eaf4a38f2a993452dfe6.svg",
     "main.b21cbddd.css.map": "/TimeKeep/static/css/main.b21cbddd.css.map",
-    "main.b0ee882a.js.map": "/TimeKeep/static/js/main.b0ee882a.js.map"
+    "main.d9a27c0a.js.map": "/TimeKeep/static/js/main.d9a27c0a.js.map"
   },
   "entrypoints": [
     "static/css/main.b21cbddd.css",
-    "static/js/main.b0ee882a.js"
+    "static/js/main.d9a27c0a.js"
   ]
 }
