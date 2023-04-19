@@ -1,33 +1,36 @@
 import './Products.scss';
 // import json from '../../../list.json';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import qs from 'qs';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import FilterCategories from '../../Main/Trending/FilterCategories/FilterCategories';
-import Sort from '../../Main/Trending/Sort/Sort';
+import { useSelector, useDispatch } from 'react-redux';
+import { setFilters, sortMenu } from '../../../redux/slices/filterSlice'; 
+import FilterCategories from './FilterCategories/FilterCategories';
+import Sort from './Sort/Sort';
 import Pagination from './Pagination/Pagination';
+import Product from './Product.jsx/Product';
 
 const Products = () => {
 
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const isUrlFilters = useRef(false);
+    const isMountedAdress = useRef(false);
+
     const [products, setProducts] = useState([]);
 
-    const [categoryId, setCategoryId] = useState(0);
-    const [sortType, setSortType] = useState( {name: "Popular", sortProperty: "rating"} );
-    const [currentPage, setCurrentPage] = useState(1);
+    const categoryId = useSelector((state) => state.filter.categoryId);
+    const sortType = useSelector((state) => state.filter.sort.sortProperty);
+    const currentPage = useSelector((state) => state.filter.currentPage);
 
-    useEffect(() => {
-        // axios.get('https://my-json-server.typicode.com/MayMarS/my-json-server/products')
-        // .then(response => {
-        //     setProducts(response.data)
-        // })
-
+    const getAllProducts = () => {
         // let data  = JSON.parse(JSON.stringify(json));
         // setProducts(data.products);
 
-
         const category = categoryId > 0 ? `category=${categoryId}` : '';
-        const sortBy = sortType.sortProperty.replace('-', '');
-        const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
+        const sortBy = sortType.replace('-', '');
+        const order = sortType.includes('-') ? 'asc' : 'desc';
 
         axios.get(`https://6433edd7582420e2316f4853.mockapi.io/api/TimeKeep/products?page=${
             currentPage}&limit=12&${category}&sortBy=${sortBy}&order=${order}`
@@ -37,12 +40,40 @@ const Products = () => {
         })
 
         window.scrollTo(0,0);
+    }
+
+    useEffect(() => {
+        if (window.location.search){
+            const params = qs.parse(window.location.search.substring(1))
+            const sort = sortMenu.find((obj) => obj.sortProperty === params.sortType)
+            dispatch(
+                setFilters({
+                    ...params,
+                    sort
+                })
+            )
+            isUrlFilters.current = true;
+        }
+    }, [])
+
+    useEffect(() => {
+        if(!isUrlFilters.current){
+            getAllProducts();
+        }
+        isUrlFilters.current = false;
     }, [categoryId, sortType, currentPage])
 
-    const navigate = useNavigate();
-    const showProductInfo = (productId) => {
-        navigate(`/product/${productId}`)
-    }
+    useEffect(() => {
+        if(isMountedAdress.current){
+            const queryString = qs.stringify({
+                categoryId,
+                sortType,
+                currentPage
+            })
+            navigate(`?${queryString}`)
+        }
+        isMountedAdress.current = true;
+    }, [categoryId, sortType, currentPage])
 
     return (
         <section className="products">
@@ -50,29 +81,15 @@ const Products = () => {
                 <h2 className="title">Shop all products</h2>
                 <h4>Choose your ideal watch or jewelry</h4>
                 <div className="products-btns">
-                    <FilterCategories value={categoryId} onClickCategory={(i) => setCategoryId(i)} />
-                    <Sort value={sortType} onClickSort={(i) => setSortType(i)} />
+                    <FilterCategories />
+                    <Sort />
                 </div>
                 <div className="products-div">
                     {
-                        products.map(product => {
-                            return(
-                                <div className="product">
-                                    <img src={product.image} alt={`img_product_${product.id}`}
-                                        onClick={() => {showProductInfo(product.id)}}>
-                                    </img>
-                                    <h2>{product.name}</h2>
-                                    <h3>{product.collection}</h3>
-                                    <p>${product.price}</p>
-                                    <button className="btn-buy">
-                                        Buy
-                                    </button>
-                                </div>
-                            )
-                        })
+                        products.map((obj) => <Product key={obj.id} {...obj} />)
                     }
                 </div>
-                <Pagination onChangePage={(number) => setCurrentPage(number)}/>
+                <Pagination />
             </div>
         </section>
     )

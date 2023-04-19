@@ -41,8 +41,10 @@ button{
   cursor: pointer;
   transition: .3s; 
 }
-.btn-buy{
+.btn-buy{ 
+    width: 130px;
     height: 40px;
+    padding: 0;
     background-color: $colorBlack;
     border: 2px solid $colorBlack;
     color: $colorWhite;
@@ -62,7 +64,7 @@ button{
         color: $colorWhite;
     }
 }
-.btn-see-all{
+.btn-shop-all{
     height: 44px;
     padding: 0 30px;
     background-color: $colorBlack;
@@ -99,6 +101,54 @@ button{
     &:hover{
         background-color: $colorTextGrey;
         color: $colorWhite;
+    }
+}
+.to-shop{
+    height: 50px;
+    padding: 0 30px;
+    background-color: $colorBlack;
+    border: 2px solid $colorBlack;
+    color: $colorWhite;
+    font-size: 20px;
+    &:hover{
+        background-color: $colorWhite;
+        color: $colorBlack;
+    }
+}
+.btn-back{
+    height: 50px;
+    padding: 0 30px;
+    background-color: $colorWhite;
+    border: 2px solid $colorBlack;
+    color: $colorBlack;
+    font-size: 20px;
+    &:hover{
+        background-color: $colorBlack;
+        color: $colorWhite;
+    }
+}
+.btn-order{
+    height: 50px;
+    padding: 0 30px;
+    background-color: $colorBlack;
+    border: 2px solid $colorBlack;
+    color: $colorWhite;
+    font-size: 20px;
+    &:hover{
+        background-color: $colorWhite;
+        color: $colorBlack;
+    }
+}
+.btn-log-in, .btn-sign-up, .btn-reset-password, .btn-contact{
+    height: 50px;
+    padding: 0 30px;
+    background-color: $colorBlack;
+    border: 2px solid $colorBlack;
+    color: $colorWhite;
+    font-size: 20px;
+    &:hover{
+        background-color: $colorWhite;
+        color: $colorBlack;
     }
 }
 

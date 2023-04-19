@@ -1,0 +1,21 @@
+@import '../../../../variables.scss';
+
+.cart-empty{
+    padding: 50px 0 70px 0;
+    background-color: $colorWhite;
+    color: $colorTextDarkGrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+        width: 300px;
+        height: auto;
+    }
+    h2{
+        text-transform: uppercase;
+        font-size: 30px;
+        margin: 40px 0;
+    }
+    // .to-shop{}
+}

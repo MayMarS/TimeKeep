@@ -34,8 +34,8 @@ import linkedin from '../assets/img/linkedin.svg';
 let state = {
 
     header: {
-        links: [{name: "Home", adress: "/"}, {name: "Shop", adress: "/shop"}, {name: "Watches", adress: "/watches"}, {name: "Jewelry", adress: "/jewelry"}, 
-                {name: "About", adress: "/about"}, {name: "Contact", adress: "/contact"}]
+        links: [{name: "Home", adress: "/Home"}, {name: "Shop", adress: "/Shop"}, {name: "Watches", adress: "/Shop/Watches"}, {name: "Jewelry", adress: "/Shop/Jewelry"}, 
+                {name: "About", adress: "/About"}, {name: "Contact", adress: "/Contact"}]
     },
 
     about: {
@@ -58,29 +58,31 @@ let state = {
 
     main:
     {
-        feachuresItems: [
-            {image: `${precise}`, title: 'Always precise', text: "Customers can rely on their watch to keep time consistently, whether they are using it for work, sports, or leisure activities."},
-            {image: `${minimalism}`, title: 'Minimalism feast ', text: "A watch is not just a functional device, but also a fashion statement. No busy features. No notifications. A new kind of classic."},
-            {image: `${quality}`, title: 'Quality investment', text: "We create high-quality products that retain their value and appeal, making them a worthwhile purchase for customers."}
-        ],
-        feachuresInfo1:
-            {image1: 'https://cdn.builder.io/api/v1/image/assets%2F8a0dd03ad52340849785aa8840f575d4%2F6ac1e4a3a9df4c9593af31b62ac9c8ae?format=webp&width=2000', 
-            title1: 'STAY ON THE DOT', text1: 'Watches dotted dial brings a pop of the unexpected to our minimalist touch. Subtle design elements like domed circle markers, a curved silhouette and softly sculpted crown nod to the collection\'s name motif.'},
-        feachuresInfo2: 
-            {image2: 'https://www.mvmt.com/dw/image/v2/BDKZ_PRD/on/demandware.static/-/Sites-mgi-master/default/dw76fcdc99/images/products/28000267_l_1.jpg?sw=800&sh=800', 
-            title2: 'MINIMALIST STYLE', text2: 'Cut out the noise. Our two hand watches bring you back to the basics with precise  quartz timekeeping tracked by hour and minute hands in a clean minimalism aesthetic.'},
-        feachuresInfo3: 
-            {image3: 'https://www.mvmt.com/dw/image/v2/BDKZ_PRD/on/demandware.static/-/Sites-mgi-master/default/dwb2c52c33/images/products/28000253_l_1.jpg?sw=800&sh=800', 
-            title3: 'DUAL TIME', text3: 'So you\'re traveling the world. Or working bi-coastal. Or just wanting some extra practicality in your timepiece. This dual timezone design is for you. Its sub-dials can display two different times at once. Set one to your hometown, and set the other to your next destination.'},
-        
-        feachuresJewelrySecond: {image: `${jewSecond}`, title: 'Fine Jewelry', text1: '...is set apart by it\'s exceptional 18k gold and platinum plate finishes over sustainable, recycled sterling silver cores.', text2: 'Our recycled sterling silver pieces are environmentally responsible alternatives to mined silver, designed to cut down CO2 emissions and reduce water usage.'},
-
-        feachuresFinal: [
-            {image: `${shipping}`, title: 'Worldwide shipping'},
-            {image: `${returns}`, title: 'Easy returns'},
-            {image: `${warranty}`, title: '24 months warranty'},
-            {image: `${safe}`, title: '100% safe checkout'}
-        ]
+        feachures: {
+            firstItems: [
+                {image: `${precise}`, title: 'Always precise', text: "Customers can rely on their watch to keep time consistently, whether they are using it for work, sports, or leisure activities."},
+                {image: `${minimalism}`, title: 'Minimalism feast ', text: "A watch is not just a functional device, but also a fashion statement. No busy features. No notifications. A new kind of classic."},
+                {image: `${quality}`, title: 'Quality investment', text: "We create high-quality products that retain their value and appeal, making them a worthwhile purchase for customers."}
+            ],
+            watchesInfo1:
+                {image: 'https://cdn.builder.io/api/v1/image/assets%2F8a0dd03ad52340849785aa8840f575d4%2F6ac1e4a3a9df4c9593af31b62ac9c8ae?format=webp&width=2000', 
+                title: 'STAY ON THE DOT', text: 'Watches dotted dial brings a pop of the unexpected to our minimalist touch. Subtle design elements like domed circle markers, a curved silhouette and softly sculpted crown nod to the collection\'s name motif.'},
+            watchesInfo2: 
+                {image: 'https://www.mvmt.com/dw/image/v2/BDKZ_PRD/on/demandware.static/-/Sites-mgi-master/default/dw76fcdc99/images/products/28000267_l_1.jpg?sw=800&sh=800', 
+                title: 'MINIMALIST STYLE', text: 'Cut out the noise. Our two hand watches bring you back to the basics with precise  quartz timekeeping tracked by hour and minute hands in a clean minimalism aesthetic.'},
+            watchesInfo3: 
+                {image: 'https://www.mvmt.com/dw/image/v2/BDKZ_PRD/on/demandware.static/-/Sites-mgi-master/default/dwb2c52c33/images/products/28000253_l_1.jpg?sw=800&sh=800', 
+                title: 'DUAL TIME', text: 'So you\'re traveling the world. Or working bi-coastal. Or just wanting some extra practicality in your timepiece. This dual timezone design is for you. Its sub-dials can display two different times at once. Set one to your hometown, and set the other to your next destination.'},
+            
+            jewelryInfo: {image: `${jewSecond}`, title: 'Fine Jewelry', text1: '...is set apart by it\'s exceptional 18k gold and platinum plate finishes over sustainable, recycled sterling silver cores.', text2: 'Our recycled sterling silver pieces are environmentally responsible alternatives to mined silver, designed to cut down CO2 emissions and reduce water usage.'},
+    
+            finalItems: [
+                {image: `${shipping}`, title: 'Worldwide shipping'},
+                {image: `${returns}`, title: 'Easy returns'},
+                {image: `${warranty}`, title: '24 months warranty'},
+                {image: `${safe}`, title: '100% safe checkout'}
+            ]
+        }
     },
 
     product: {
@@ -89,19 +91,20 @@ let state = {
             {image: `${minimalism}`, title: 'Minimalism feast ', text: "A watch is not just a functional device, but also a fashion statement. No busy features. No notifications. A new kind of classic."},
             {image: `${quality}`, title: 'Quality investment', text: "We create high-quality products that retain their value and appeal, making them a worthwhile purchase for customers."}
         ],
-        otherInfoImg1: {image1: `${automatic1}`, image2: `${automatic2}`},
+        otherInfoImages1: {image1: `${automatic1}`, image2: `${automatic2}`},
         otherInfo1:
         ['The next level of timekeeping is powered by you.',
         'Automatic watches have been loved for centuries for their sophisticated self-winding engines.',
         'Made up of an intricate series of wound springs and gear trains, they use kinetic energy from your wrist to keep time.',
         'Take a look through its exhibition case back to experience our precise, mechanical heartbeat for yourself.'
         ],
-        otherInfoImg2: {image3: `${classic1}`, image4: `${classic2}`},
+        otherInfoImages2: {image1: `${classic1}`, image2: `${classic2}`},
         otherInfo2: ['Some things never go out of style.',
         'Our 3 hand watches blend precise Japanese quartz timekeeping (tracked by hour, minute and second hands) with a California clean aesthetic.',
         'everyday essential features an ultra slim case that can easily move between casual and formal occasions.',
         'No busy features. No notifications. A new kind of classic.'
-        ]
+        ],
+        otherTitle: {title: "What's up, Spring", text: "A perfect opportunity to add a refreshing new wardrobe staple into your mix"}
     },
         
     footer: {

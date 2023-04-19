@@ -12,7 +12,7 @@ const Main = (props) => {
             <PrimeSection />
             <Categories /> 
             <Trending />
-            <Feachures main={props.main}/>
+            <Feachures feachures={props.main.feachures}/>
         </main>
     )
 }

@@ -1,0 +1,74 @@
+@import '../../../../variables.scss';
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .item-info{
+        display: flex;
+        align-items: center;
+
+        img{
+            width: 100px;
+            height: auto;
+        }
+        .info{
+            padding-left: 30px;
+            h3{
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .item-wrap{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .item-quantity{
+            display: flex;
+            align-items: center;
+    
+            .btn-quantity{
+                padding: 0;
+                width: 45px;
+                height: 45px;
+                font-size: 30px;
+                color: $colorTextGrey;
+                border: 1px solid $colorTextGrey;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: .3s;
+                &:hover{
+                    background-color: $colorWhite;
+                    border: 1px solid $colorBlack;
+                    color: $colorBlack;
+                }
+            }
+            .count{
+                margin: 0 15px;
+            }
+
+        }
+        .item-sum{
+        }
+        .btn-remove-item{
+            width: 45px;
+            height: 45px;
+            background-color: $colorTextGrey;
+            background-image: url('../../../../assets/img/close-white.svg');
+            background-size: 15px 15px;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            transition: .3s;
+            &:hover{
+                background-color: $colorBlack;
+            }
+        }
+    }
+}

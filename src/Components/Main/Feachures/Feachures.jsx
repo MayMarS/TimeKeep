@@ -1,17 +1,17 @@
 import './Feachures.scss';
 
-const Items = (props) => {
+const FirstItems = (props) => {
     return(
-        <div className="item">
+        <div className="first-item">
             <img src={props.item.image} alt="icon"/>
             <h3>{props.item.title}</h3>
             <p>{props.item.text}</p>
         </div>
     )
 }
-const Final = (props) => {
+const FinalItems = (props) => {
     return(
-        <div className="final">
+        <div className="final-item">
             <img src={props.item.image} alt="icon"/>
             <h4>{props.item.title}</h4>
         </div>
@@ -19,60 +19,60 @@ const Final = (props) => {
 }
 
 const Feachures = (props) => {
-    let feachuresItems = props.main.feachuresItems.map(item => <Items item={item} />)
-    let feachuresFinal = props.main.feachuresFinal.map(item => <Final item={item} />)
+    let firstItems = props.feachures.firstItems.map(item => <FirstItems item={item} />)
+    let finalItems = props.feachures.finalItems.map(item => <FinalItems item={item} />)
     return (
         <section className="feachures">
 
-            <div className="feachures-items">
-                {feachuresItems}
+            <div className="feachures-first-items">
+                {firstItems}
             </div>
-            <div className="feachures-info">
+            <div className="watches-div">
                 <div className="info">
                     <div className="left">
-                        <img src={props.main.feachuresInfo1.image1} alt="product_photo"></img>
+                        <img src={props.feachures.watchesInfo1.image} alt="product_photo"></img>
                     </div>
                     <div className="right text">
-                        <h3>{props.main.feachuresInfo1.title1}</h3>
-                        <p>{props.main.feachuresInfo1.text1}</p>
+                        <h3>{props.feachures.watchesInfo1.title}</h3>
+                        <p>{props.feachures.watchesInfo1.text}</p>
                     </div>
                 </div>
                 <div className="info">
                     <div className="left text">
-                        <h3>{props.main.feachuresInfo2.title2}</h3>
-                        <p>{props.main.feachuresInfo2.text2}</p>
+                        <h3>{props.feachures.watchesInfo2.title}</h3>
+                        <p>{props.feachures.watchesInfo2.text}</p>
                     </div>
                     <div className="right">
-                        <img src={props.main.feachuresInfo2.image2} alt="product_photo"></img>
+                        <img src={props.feachures.watchesInfo2.image} alt="product_photo"></img>
                     </div>
                 </div>
                 <div className="info">
                     <div className="left">
-                        <img src={props.main.feachuresInfo3.image3} alt="product_photo"></img>
+                        <img src={props.feachures.watchesInfo3.image} alt="product_photo"></img>
                     </div>
                     <div className="right text">
-                        <h3>{props.main.feachuresInfo3.title3}</h3>
-                        <p>{props.main.feachuresInfo3.text3}</p>
+                        <h3>{props.feachures.watchesInfo3.title}</h3>
+                        <p>{props.feachures.watchesInfo3.text}</p>
                     </div>
                 </div>
-                <div className="jewelry-div">
-                    <div className="feachures-jewelry-first">
+            </div>
+            <div className="jewelry-div">
+                    <div className="jewelry-first-div">
                         <h2>Work of art</h2>
                         <p>When attention to details matter</p>
                         <button className="btn-shop-now-grey">Shop now</button>
                     </div>
-                    <div className="feachures-jewelry-second">
-                        <img src={props.main.feachuresJewelrySecond.image} alt="product_photo"></img>
-                        <div className="second-div">
-                            <h3>{props.main.feachuresJewelrySecond.title}</h3>
-                            <p>{props.main.feachuresJewelrySecond.text1}</p>
-                            <p>{props.main.feachuresJewelrySecond.text2}</p>
+                    <div className="jewelry-second-div">
+                        <img src={props.feachures.jewelryInfo.image} alt="product_photo"></img>
+                        <div className="second-div-info">
+                            <h3>{props.feachures.jewelryInfo.title}</h3>
+                            <p>{props.feachures.jewelryInfo.text1}</p>
+                            <p>{props.feachures.jewelryInfo.text2}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="features-final-div">
-                {feachuresFinal}
+            <div className="features-final-items">
+                {finalItems}
             </div>
 
         </section>

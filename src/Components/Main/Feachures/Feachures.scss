@@ -5,7 +5,7 @@
     background-color: $colorWhite;
     color: $colorTextDarkGrey;
 
-    .feachures-items{
+    .feachures-first-items{
         width: 100%;
         padding: 40px 20px;
         background-color: $colorBlack;
@@ -14,7 +14,7 @@
         align-items: center;
         justify-content: space-between;
 
-        .item{
+        .first-item{
             display: flex;
             flex-direction: column;
             padding: 0 30px;
@@ -37,7 +37,7 @@
             }
         }
     }
-    .feachures-info{
+    .watches-div{
         width: 100%;
         
         .info{
@@ -80,74 +80,65 @@
                 }
             }
         }
-        .jewelry-div{
-            width: 100%;
-            padding-top: 40px;
-            position: relative;
-            &::before{
-                width: 100%;
-                height: 1px;
-                background-color: #e4e4e4;
-                content: "";
-                position: absolute;
-                top: -40px;
-                left: 0;
-            }
+    }
+    .jewelry-div{
+        width: 100%;
+        padding-top: 50px;
+        position: relative;
 
-            .feachures-jewelry-first{
-                padding: 0 50px;
+        .jewelry-first-div{
+            padding: 0 50px;
+            width: 100%;
+            height: 500px;
+            background-image: url(../../../assets/img/bg-feachures-jewelry.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: $colorTextGrey;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2{
+                font-size: 48px;
+                text-transform: uppercase;
+            }
+            p{
+                font-size: 18px;
+                margin: 10px 0;
+            }
+            // .btn-shop-now-grey{}
+        }
+        .jewelry-second-div{
+            background-color: $colorWhite;
+            padding: 0 50px;
+            position: relative;
+            img{
+                width: 350px;
+                height: auto;
+                position: absolute;
+                top: -85px;
+                left: 50px;
+            }
+            .second-div-info{
                 width: 100%;
-                height: 500px;
-                background-image: url(../../../assets/img/bg-feachures-jewelry.jpg);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                color: $colorTextGrey;
+                height: 300px;
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
-                h2{
-                    font-size: 48px;
+                flex-direction: column;
+                padding: 0 0 75px 410px;
+                h3{
+                    font-size: 28px;
                     text-transform: uppercase;
                 }
                 p{
-                    font-size: 18px;
-                    margin: 10px 0;
-                }
-                // .btn-shop-now-grey{}
-            }
-            .feachures-jewelry-second{
-                background-color: $colorWhite;
-                padding: 0 50px;
-                position: relative;
-                img{
-                    width: 350px;
-                    height: auto;
-                    position: absolute;
-                    top: -85px;
-                    left: 50px;
-                }
-                .second-div{
-                    width: 100%;
-                    height: 300px;
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: column;
-                    padding: 0 0 75px 410px;
-                    h3{
-                        font-size: 28px;
-                        text-transform: uppercase;
-                    }
-                    p{
-                        color: $colorTextGrey;
-                        font-size: 16px;
-                        line-height: 1.8;
-                    }
+                    color: $colorTextGrey;
+                    font-size: 16px;
+                    line-height: 1.8;
                 }
             }
         }
     }
-    .features-final-div{
+    .features-final-items{
         width: 100%;
         padding: 40px 20px;
         background-color: $colorBlack;
@@ -155,7 +146,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        .final{
+        .final-item{
             display: flex;
             align-items: center;
             padding: 0 30px;

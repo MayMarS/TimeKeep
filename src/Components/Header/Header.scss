@@ -23,7 +23,6 @@ header{
         bottom: 0;
         left: 0;
     }
-
     .header-logo{
         width: 120px;
         height: 40px;
@@ -63,43 +62,60 @@ header{
         display: flex;
         align-items: center;
         justify-content: space-around;
+        position: relative;
 
-        .user-account-link{
-            padding-right: 25px;
-            margin-right: 35px;
-            position: relative;
-        
-            &::after{
-                width: 20px;
-                height: 20px;
-                background-image: url('../../assets/img/icon-account.svg');
-                background-size: contain;
-                background-repeat: no-repeat;
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
+        .user-account-div{
+            .user-account-link{
+                cursor: pointer;
+                padding-right: 25px;
+                margin-right: 35px;
+                position: relative;
+                &::after{
+                    width: 20px;
+                    height: 20px;
+                    background-image: url('../../assets/img/icon-account.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
             }
         }
-        .user-cart-link{
-            padding-right: 25px;
-            position: relative;
-        
-            &::after{
-                width: 20px;
-                height: 20px;
-                background-image: url('../../assets/img/icon-cart.svg');
-                background-size: contain;
-                background-repeat: no-repeat;
-                content: "";
+        .user-cart-div{
+            .user-cart-link{
+                padding-right: 25px;
+                position: relative;
+                &::after{
+                    width: 20px;
+                    height: 20px;
+                    background-image: url('../../assets/img/icon-cart.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+            .cart-quantity{
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: -6px;
+                right: -10px;
+                width: 15px;
+                height: 15px;
+                background-color: $colorTextDarkGrey;
+                border-radius: 50%;
+                color: white;
+                font-size: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     }
 }
-
 .header-fixed{
     width: 100%;
     height: 80px;

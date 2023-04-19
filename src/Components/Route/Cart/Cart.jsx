@@ -1,45 +1,49 @@
 import './Cart.scss';
+import CartItem from './CartItem/CartItem';
+import CartEmpty from './CartEmpty/CartEmpty';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { clearAll } from '../../../redux/slices/cartSlice';
 
 const Cart = () => {
+
+    const {products, totalPrice} = useSelector((state) => state.cart);
+    const totalCount = products.reduce((sum, item) => sum + item.count, 0);
+    const dispatch = useDispatch();
+
+    const onClickClear = () => {
+        dispatch(clearAll())
+    }
+
+    const navigate = useNavigate();
+    const showAllProducts = () => {
+        navigate('/Shop')
+    }
+
+    if(!totalCount) {
+        return <CartEmpty/>
+    }
 
     return(
         <div className="cart">
             <div className="container">
-
                 <div className="cart-title">
-                    <h2>Cart</h2>
-                    <button className="btn-delete-all">Remove all</button>
+                    <h2>Your Cart</h2>
+                    <span onClick={onClickClear} className="btn-clear-all">Clear all</span>
                 </div>
-
                 <div className="cart-div">
-
-                    <div className="cart-info">
-                        <img src="https://www.mvmt.com/dw/image/v2/BDKZ_PRD/on/demandware.static/-/Sites-mgi-master/default/dwc1aaec3a/images/products/28000116_fr.jpg?sw=512&sh=640&q=85" alt="product_photo"/>
-                        <div>
-                            <h3>Watch</h3>
-                            <p>Model</p>
-                        </div>
-                    </div>
-
-                    <div className="cart-quantity">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    
-                    <div className="cart-sum">
-                        <span>$100</span>
-                    </div>
-
-                    <button className="btn-delete-cart-item">x</button>
-
+                    {
+                        products.map(item => <CartItem key={item.id} {...item} />)
+                    }
                 </div>
-
                 <div className="cart-total">
-                    <p>Total sum<span>$100</span></p>
+                    <p>Total items: <span>{totalCount}</span></p>
+                    <p>Total sum: <span>${totalPrice}</span></p>
                 </div>
-
-
+                <div className="cart-btns">
+                    <button onClick={showAllProducts} className="btn-back">Come back</button>
+                    <button className="btn-order">Make an order</button>
+                </div>
             </div>
         </div>
     )

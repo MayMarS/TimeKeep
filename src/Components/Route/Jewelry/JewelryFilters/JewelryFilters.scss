@@ -6,12 +6,20 @@
     justify-content: space-between;
 
     .btn-filter{
+        height: 44px;
         margin-right: 15px;
         padding: 0 30px;
+        background-color: $colorWhite;
+        border: 1px solid $colorBlack;
+        color: $colorBlack;
+        &:hover{
+            background-color: $colorBlack;
+            color: $colorWhite;
+        }
     }
-    .active-category{
-        margin-right: 15px;
+    .active-filter{
         height: 44px;
+        margin-right: 15px;
         padding: 0 30px;
         background-color: $colorBlack;
         border: 1px solid $colorBlack;

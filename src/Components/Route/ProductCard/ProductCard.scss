@@ -2,7 +2,7 @@
 
 .product-div{
     width: 100%;
-    padding: 150px 0 70px 0;
+    padding: 70px 0;
     background-color: $colorWhite;
     color: $colorTextDarkGrey;
 
@@ -40,6 +40,29 @@
             }
             .btn-buy{
                 margin: 20px 0 50px 0;
+                position: relative;
+            }
+            .buy-count{
+                &:hover{
+                    .count{
+                        background-color: $colorBlack;
+                        color: $colorWhite
+                    }
+                }
+            }
+            .count{
+                width: 18px;
+                height: 18px;
+                background-color: $colorWhite;
+                border-radius: 50%;
+                color: $colorBlack;
+                font-size: 11px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                margin-left: 15px;
+                font-weight: 600;
             }
 
             .accordion-info{
@@ -116,7 +139,6 @@
             }
         }
     }
-
     .feachures-items{
         margin-top: 70px;
         width: 100%;
@@ -150,15 +172,9 @@
             }
         }
     }
-
     .other-info-div{
         margin-top: 70px;
-        // .left-div{
-        //     margin-left: 80px;
-        // }
-        // .right-div{
-        //     padding-right: 80px;
-        // }
+
         .other-info{
             background-color: $bgColorGrey;
             width: 100%;
@@ -188,7 +204,6 @@
             }
         }
     }
-
     .other-title{
         width: 100%;
         height: 500px;

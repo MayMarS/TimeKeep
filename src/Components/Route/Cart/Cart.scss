@@ -1,61 +1,59 @@
 @import '../../../variables.scss';
 
 .cart{
-    padding: 150px 0 70px 0;
-    background-color: rgb(255, 255, 191);
-    // background-color: $bgColorGrey;
+    padding: 50px 0 70px 0;
+    background-color: $colorWhite;
     color: $colorTextDarkGrey;
 
     .cart-title{
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         h2{
-            font-size: 20px;
+            font-size: 30px;
         }
-
-        .btn-delete-all{
-            width: fit-content;
-            height: 30px;
-            padding: 0;
+        .btn-clear-all{
+            display: block;
+            font-size: 20px;
+            cursor: pointer;
+            position: relative;
+            &::before{
+                width: 20px;
+                height: 20px;
+                background-image: url(../../../assets/img/close-grey.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                content: "";
+                position: absolute;
+                top: 2px;
+                left: -20px;
+            }
         }
     }
-
     .cart-div{
+        margin: 30px 0;
+        //.cart-item{}
+    }
+    .cart-total{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        p{
+            margin-bottom: 10px;
+            font-size: 20px;
+            span{
+                font-weight: 500;
+            }
+        }
+    }
+    .cart-btns{
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        .cart-info{
-            display: flex;
-    
-            img{
-                width: 100px;
-                height: auto;
-            }
-        }
-        .cart-quantity{
-            display: flex;
-
-            button{
-                width: 30px;
-                height: 30px;
-                padding: 0;
-            }
-        }
-        .cart-sum{
-    
-        }
-        .btn-delete-cart-item{
-            width: 30px;
-            height: 30px;
-            padding: 0;
-        }
-    }
-
-    .cart-total{
-        
+        margin-top: 30px;
+        // .btn-back{}
+        // .btn-order{}
     }
 }
 

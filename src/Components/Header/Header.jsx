@@ -1,6 +1,8 @@
+import './Header.scss';
+import Dropdown from '../Route/Account/Dropdown';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import './Header.scss';
+import { useSelector } from 'react-redux';
 
 const LinkItem = (props) => {
     return (
@@ -9,6 +11,17 @@ const LinkItem = (props) => {
 }
 
 const Header = (props) => {
+
+    const [dropdown, setDropdown] = useState(false);
+    const onMouseEnter = () => {
+        setDropdown(true)
+    }
+    const onMouseLeave = () => {
+        setDropdown(false)
+    }
+
+    const {products} = useSelector((state) => state.cart);
+    const totalCount = products.reduce((sum, item) => sum + item.count, 0);
 
     const [sticky, setSticky] = useState('');
     useEffect(() => {
@@ -27,15 +40,23 @@ const Header = (props) => {
     let headerLinks = props.links.map(link => <LinkItem link={link}/>)
     return (
         <header className={sticky}>
-            <NavLink className="header-logo" to="/"></NavLink>
+            <NavLink className="header-logo" to="/Home"></NavLink>
             <div className="header-nav">
                 <nav>
                     {headerLinks}
                 </nav>
             </div>
             <div className="header-user">
-                <NavLink to="/account" className="user-account-link">Account</NavLink>
-                <NavLink to="/cart" className="user-cart-link">Cart</NavLink>
+                <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="user-account-div">
+                    <a className="user-account-link" href="#">
+                        Account
+                    </a>
+                    {dropdown && <Dropdown />}
+                </div>
+                <div className="user-cart-div">
+                    <NavLink to="/Cart" className="user-cart-link">Cart</NavLink>
+                    <span className="cart-quantity">{totalCount}</span>
+                </div>
             </div>
         </header>
     )

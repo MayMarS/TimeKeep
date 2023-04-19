@@ -1,14 +1,19 @@
-import './Product.scss';
+import './ProductCard.scss';
+import json from '../../../list.json';
 // import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import json from '../../../list.json';
+import { useDispatch, useSelector } from 'react-redux';
+import { addProduct } from '../../../redux/slices/cartSlice';
 
-const Product = (props) => {
+const ProductCard = (props) => {
 
     const [product, setProduct] = useState(false);
     let {productId} = useParams();
     let data  = JSON.parse(JSON.stringify(json));
+
+    const cartItem = useSelector((state) => state.cart.products.find((obj) => obj.id === product.id));
+    const addedCount = cartItem ? cartItem.count : 0;
 
     useEffect(() => {
         // axios.get(`https://my-json-server.typicode.com/MayMarS/my-json-server/products/${productId}`)
@@ -16,20 +21,25 @@ const Product = (props) => {
         //     setProduct(response.data)
         // })
 
-        data.products.map(element => {
-            if (Number(element.id) === Number(productId)){
-                setProduct(element);
+        data.products.map(obj => {
+            if (Number(obj.id) === Number(productId)){
+                setProduct(obj);
             }
         })
 
         window.scrollTo(0,0);
     }, [])
 
-    const [isProductInCart, setIsProductInCart] = useState(false);
-    const addProductToCart = () => {
-        alert(`${product.name} was added to cart`);
-        setIsProductInCart(true);
+    const dispatch = useDispatch();
+    const onClickAdd = () => {
+        dispatch(addProduct(product))
     }
+
+    // const [isProductInCart, setIsProductInCart] = useState(false);
+    // const addProductToCart = () => {
+    //     alert(`${product.name} was added to cart`);
+    //     setIsProductInCart(true);
+    // }
 
     const [clicked, setClicked] = useState(false);
     const toggle = index => {
@@ -56,12 +66,14 @@ const Product = (props) => {
                         <h2>{product.name}</h2>
                         <h4>{product.collection}</h4>
                         <p className="price">${product.price}</p>
-
-                        {
+                        <button onClick={onClickAdd} className={addedCount > 0 ? "btn-buy buy-count" : "btn-buy"}>Buy
+                            {addedCount > 0 && <span className="count">{addedCount}</span>}
+                        </button>
+                        {/* {
                             isProductInCart ?
                             <button className="btn-buy" onClick={addProductToCart}>Already in cart</button> :
                             <button className="btn-buy" onClick={addProductToCart}>Buy</button>
-                        }
+                        } */}
 
                         <div className="accordion-info">
 
@@ -143,9 +155,9 @@ const Product = (props) => {
 
             <div className="container">
                 <div className="other-info-div">
-                    <div className="other-info left-div">
-                        <img src={props.product.otherInfoImg1.image1} alt="product_photo"></img>
-                        <img src={props.product.otherInfoImg1.image2} alt="product_photo"></img>
+                    <div className="other-info">
+                        <img src={props.product.otherInfoImages1.image1} alt="product_photo"></img>
+                        <img src={props.product.otherInfoImages1.image2} alt="product_photo"></img>
                         <div className="info">
                             <h2>Automatic</h2>
                             {
@@ -157,7 +169,7 @@ const Product = (props) => {
                             }
                         </div>
                     </div>
-                    <div className="other-info right-div">
+                    <div className="other-info">
                         <div className="info">
                             <h2>Classic</h2>
                             {
@@ -168,15 +180,15 @@ const Product = (props) => {
                                 })
                             }
                         </div>
-                        <img src={props.product.otherInfoImg2.image3} alt="product_photo"></img>
-                        <img src={props.product.otherInfoImg2.image4} alt="product_photo"></img>
+                        <img src={props.product.otherInfoImages2.image1} alt="product_photo"></img>
+                        <img src={props.product.otherInfoImages2.image2} alt="product_photo"></img>
                     </div>
                 </div>
             </div>
             
             <div className="other-title">
-                <h2>What's up, Spring</h2>
-                <h4>A perfect opportunity to add a refreshing new wardrobe staple into your mix</h4>
+                <h2>{props.product.otherTitle.title}</h2>
+                <h4>{props.product.otherTitle.text}</h4>
                 <button className="btn-shop-now-blue">Shop now</button>
             </div>
 
@@ -184,4 +196,4 @@ const Product = (props) => {
     );
 }
 
-export default Product;
+export default ProductCard;
