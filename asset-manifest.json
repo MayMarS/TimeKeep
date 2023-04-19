@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TimeKeep/static/css/main.0e7d82eb.css",
-    "main.js": "/TimeKeep/static/js/main.3a6f5894.js",
+    "main.css": "/TimeKeep/static/css/main.b21cbddd.css",
+    "main.js": "/TimeKeep/static/js/main.b0ee882a.js",
     "static/media/bg-about.jpg": "/TimeKeep/static/media/bg-about.15f000eebef866b79335.jpg",
     "static/media/MenWatches-2023.jpg": "/TimeKeep/static/media/MenWatches-2023.6da0d89498fc85ada9d6.jpg",
     "static/media/FineJewelry.jpg": "/TimeKeep/static/media/FineJewelry.2528e6fe9c41e00630d5.jpg",
@@ -15,10 +15,14 @@
     "static/media/automatic1.jpg": "/TimeKeep/static/media/automatic1.f1ae9b7903ba5954f196.jpg",
     "static/media/bg-about-2.jpg": "/TimeKeep/static/media/bg-about-2.e0e6671373f5032cb63b.jpg",
     "static/media/WomenWatches-2023.jpg": "/TimeKeep/static/media/WomenWatches-2023.8c98e17265e8c6c7de7b.jpg",
-    "static/media/logo.svg": "/TimeKeep/static/media/logo.94a1d7839f6b13072815.svg",
+    "static/media/logo.svg": "/TimeKeep/static/media/logo.93c473fc23a22d0a9b19.svg",
     "static/media/instagram.svg": "/TimeKeep/static/media/instagram.ea3d7f7daeec7ac6381c1fcd2708ce43.svg",
-    "static/media/icon-cart.svg": "/TimeKeep/static/media/icon-cart.d2672319a39ecd6b5735.svg",
+    "static/media/empty-cart.svg": "/TimeKeep/static/media/empty-cart.64cf21fef8d4f6e394d953dabd856c25.svg",
+    "static/media/icon-cart.svg": "/TimeKeep/static/media/icon-cart.76a9e1de43170d3a62e4.svg",
+    "static/media/icon-account.svg": "/TimeKeep/static/media/icon-account.72dd0f6f49fa8f1438f8.svg",
     "static/media/twitter.svg": "/TimeKeep/static/media/twitter.3a55a08e07dd27ddadd8372450a01deb.svg",
+    "static/media/close-grey.svg": "/TimeKeep/static/media/close-grey.8d9714b83c59ab4b561a.svg",
+    "static/media/close-white.svg": "/TimeKeep/static/media/close-white.7e1419cee5b1b04ec08e.svg",
     "static/media/design.svg": "/TimeKeep/static/media/design.b5e043e670e66981c4918770f241e8c0.svg",
     "static/media/linkedin.svg": "/TimeKeep/static/media/linkedin.cfb0819112fc36b9f51cd305a140dda1.svg",
     "index.html": "/TimeKeep/index.html",
@@ -30,11 +34,11 @@
     "static/media/precise.svg": "/TimeKeep/static/media/precise.11e4e93fb20be2401f78e5c96e5b857e.svg",
     "static/media/facebook.svg": "/TimeKeep/static/media/facebook.31a470823cf688ae213e0283dc2c5295.svg",
     "static/media/quality.svg": "/TimeKeep/static/media/quality.9009144142c7cebc0d3aa902ed90d55d.svg",
-    "static/media/icon-account.svg": "/TimeKeep/static/media/icon-account.e38787fbdc2413a59403.svg",
     "static/media/repair.svg": "/TimeKeep/static/media/repair.a9c5c7ff7f4c184c01218f5c221bba18.svg",
     "static/media/letter.svg": "/TimeKeep/static/media/letter.ed43ff2e1b4b2a069bfa.svg",
     "static/media/safe.svg": "/TimeKeep/static/media/safe.0fb9ce3efe229db853c71733aaab0e76.svg",
     "static/media/shipping.svg": "/TimeKeep/static/media/shipping.1f591a5ab9528cf7fe5ecfc3f0018377.svg",
+    "static/media/tick-white.svg": "/TimeKeep/static/media/tick-white.838f3093e0e9f72e0dde.svg",
     "static/media/arrow-down-black.svg": "/TimeKeep/static/media/arrow-down-black.4da1e80b410aeb159cef.svg",
     "static/media/arrow-down.svg": "/TimeKeep/static/media/arrow-down.66cad3a3f32456ba9829.svg",
     "static/media/arrow-down-white.svg": "/TimeKeep/static/media/arrow-down-white.ad02eef04095b2463f48.svg",
@@ -42,11 +46,11 @@
     "static/media/arrow-left.svg": "/TimeKeep/static/media/arrow-left.50f051cf89a42adeca91.svg",
     "static/media/arrow-up.svg": "/TimeKeep/static/media/arrow-up.74a4a75d1dcbb163bda3.svg",
     "static/media/minimalism.svg": "/TimeKeep/static/media/minimalism.332e14e21c82eaf4a38f2a993452dfe6.svg",
-    "main.0e7d82eb.css.map": "/TimeKeep/static/css/main.0e7d82eb.css.map",
-    "main.3a6f5894.js.map": "/TimeKeep/static/js/main.3a6f5894.js.map"
+    "main.b21cbddd.css.map": "/TimeKeep/static/css/main.b21cbddd.css.map",
+    "main.b0ee882a.js.map": "/TimeKeep/static/js/main.b0ee882a.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e7d82eb.css",
-    "static/js/main.3a6f5894.js"
+    "static/css/main.b21cbddd.css",
+    "static/js/main.b0ee882a.js"
   ]
 }
