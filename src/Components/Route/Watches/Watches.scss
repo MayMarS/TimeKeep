@@ -9,7 +9,7 @@
     .watches-bg{
         width: 100%;
         height: 300px;
-        background-image: url('https://www.mvmt.com/on/demandware.static/-/Sites/default/dw2ed1ea78/images/bannerImages/ValentinesDesktop.jpg');
+        background-image: url(../../../assets/img/AllWatches.jpg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -17,7 +17,7 @@
         align-items: center;
         .watches-title{
             background-color: $colorWhite;
-            width: 22%;
+            width: 30%;
             padding: 25px;
             margin-left: 70px;
             cursor: pointer;
@@ -34,3 +34,36 @@
         }
     }
 }
+
+@media (max-width: 992px) {
+    .watches{
+        .watches-bg{
+            .watches-title{
+                width: 40%;
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .watches{
+        .watches-bg{
+            .watches-title{
+                width: 50%;
+            }
+        }
+    }
+}
+@media (max-width: 576px) {
+    .watches{
+        .watches-bg{
+            .watches-title{
+                width: 60%;
+                margin: 0 auto;
+                h3{
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+

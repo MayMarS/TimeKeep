@@ -1,10 +1,10 @@
 import './SignUp.scss';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const SignUp = () => {
 
-    const initialvalues = {firstName: "", lastName: "", email: "", password: "",  confirmPassword: ""};
-    const [formValues, setFormValues] = useState(initialvalues);
+    const initialValues = {firstName: "", lastName: "", email: "", password: "",  confirmPassword: ""};
+    const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
@@ -17,22 +17,7 @@ const SignUp = () => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-
-        // const isValid = setFormErrors(validate(formValues));
-        // if(isValid){
-        //     setFormValues(initialvalues);
-        //     alert("success!");
-        //     setIsSubmit(true);
-        // }
-
     }
-
-    useEffect(() => {
-        if(Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
-        }
-        window.scrollTo(0,0);
-    }, [formErrors])
 
     const validate = (values) => {
         const errors = {};
@@ -40,7 +25,6 @@ const SignUp = () => {
         const regexLastName = /^[a-zA-Z0-9]{2,15}$/; 
         const regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,}$/; 
         const regexPassword = /^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/;
-        // const regexConfirmPassword = values.password;
         if(!values.firstName){
             errors.firstName = "First Name is reguired";
         } else if(!regexFirstName.test(values.firstName)){
@@ -69,24 +53,39 @@ const SignUp = () => {
         return errors;
     }
 
+    const changeIcon = (e) => {
+        const btn = e.target.parentNode;
+        const input = btn.previousElementSibling;
+        const inputType = input.getAttribute('type');
+
+        if(inputType === 'password') {
+            input.setAttribute('type', 'text');
+            btn.classList.toggle("password-toggle_hide");
+            btn.classList.toggle("password-toggle_show");
+        } else {
+            input.setAttribute('type', 'password');
+            btn.classList.toggle("password-toggle_show");
+            btn.classList.toggle("password-toggle_hide");
+        }
+    }
+
     return(
         <div className="account-sign-up">
             <div className="sign-up">
                 <h3>New to TimeKeep?</h3>
                 <p>Create a new account and earn points, get faster checkout and be the first to know about our exclusive offers.</p>
 
-                {/* {Object.keys(formErrors).length === 0 && isSubmit ? (alert("Logged in successfully!")) : null} */}
-
+                {Object.keys(formErrors).length === 0 && isSubmit ? (alert("Signed Up successfully!")) : null}
                 <form onSubmit={handleSubmit} id="form">
                     <div className="field">
                         <label for="firstname-signup">* First Name</label>
-                        <input type="text" id="firstname-signup" placeholder="First Name" name="firstname"
+                        <input type="text" id="firstname-signup" placeholder="First Name" name="firstName"
                             value={formValues.firstName} onChange={handleChange} />
                         <span className="error">{formErrors.firstName}</span>
                     </div>
                     <div className="field">
                         <label for="lastname-signup">* Last Name</label>
-                        <input type="text" id="lastname-signup" placeholder="Last Name" name="lastname"
+                        <input type="text" id="lastname-signup" placeholder="Last Name" name="lastName"
                             value={formValues.lastName} onChange={handleChange} />
                         <span className="error">{formErrors.lastName}</span>
                     </div>
@@ -100,17 +99,27 @@ const SignUp = () => {
                         <label for="password-signup">* Password</label>
                         <input type="password" id="password-signup" placeholder="Password" name="password"
                             value={formValues.password} onChange={handleChange} />
+                        <button type="button" onClick={(e)=> changeIcon(e)} 
+                        class="password-toggle password-toggle_hide" >
+                            <span class="password-toggle_icon password-toggle_icon_hide"></span>
+                            <span class="password-toggle_icon password-toggle_icon_show"></span>
+                        </button>
                         <span className="error">{formErrors.password}</span>
                     </div>
                     <div className="field">
                         <label for="confirm-password-signup">* Confirm Password</label>
-                        <input type="password" id="confirm-password-signup" placeholder="Confirm Password" name="confirm-password"
+                        <input type="password" id="confirm-password-signup" placeholder="Confirm Password" name="confirmPassword"
                             value={formValues.confirmPassword} onChange={handleChange} />
+                        <button type="button" onClick={(e)=> changeIcon(e)} 
+                        class="password-toggle password-toggle_hide" >
+                            <span class="password-toggle_icon password-toggle_icon_hide"></span>
+                            <span class="password-toggle_icon password-toggle_icon_show"></span>
+                        </button>
                         <span className="error">{formErrors.confirmPassword}</span>
                     </div>
                     <div className="checkbox-div">
-                        <input id="checkbox-sign" type="checkbox"></input>
-                        <label for="checkbox-sign">Sign-up to receive the latest updates and promotions</label>
+                        <input id="checkbox-signup" type="checkbox"></input>
+                        <label for="checkbox-signup">Sign-up to receive the latest updates and promotions</label>
                     </div>
                     <button type="submit" className="btn-sign-up">Create Account</button>
                 </form>

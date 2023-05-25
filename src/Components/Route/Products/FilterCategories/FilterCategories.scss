@@ -26,3 +26,23 @@
         color: $colorWhite;
     }
 }
+
+@media (max-width: 992px) {
+    .products{
+        .filters-div{
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            .btn-filter, .active-filter{
+                padding: 0 20px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .products{
+        .filters-div{
+            justify-content: center;
+        }
+    }
+}

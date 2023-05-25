@@ -9,7 +9,7 @@ import { setFilters, sortMenu } from '../../../redux/slices/filterSlice';
 import FilterCategories from './FilterCategories/FilterCategories';
 import Sort from './Sort/Sort';
 import Pagination from './Pagination/Pagination';
-import Product from './Product.jsx/Product';
+import Product from './Product/Product';
 
 const Products = () => {
 
@@ -54,7 +54,7 @@ const Products = () => {
             )
             isUrlFilters.current = true;
         }
-    }, [])
+    }, [dispatch])
 
     useEffect(() => {
         if(!isUrlFilters.current){
@@ -73,7 +73,7 @@ const Products = () => {
             navigate(`?${queryString}`)
         }
         isMountedAdress.current = true;
-    }, [categoryId, sortType, currentPage])
+    }, [categoryId, sortType, currentPage, navigate])
 
     return (
         <section className="products">

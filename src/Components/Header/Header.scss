@@ -1,19 +1,192 @@
 @import '../../variables.scss';
 
 header{
-    background-color: $colorWhite;
-    color: $colorTextDarkGrey;
-    position: fixed;
     width: 100%;
     height: 80px;
+    .main-header{
+        background-color: $colorWhite;
+        color: $colorTextDarkGrey;
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        z-index: 10;
+        transition: .7s;
+        &::after{
+            width: 100%;
+            height: 1px;
+            background-color: #e4e4e4;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .header-logo{
+            width: 120px;
+            height: 40px;
+            background-image: url('../../assets/img/logo.svg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .header-nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            nav a{
+                color: $colorTextDarkGrey;
+                margin-right: 35px;
+                transition: .3s;
+                position: relative;
+                &::after{
+                    width: 100%;
+                    height: 1.5px;
+                    background-color: $colorTextDarkGrey;
+                    content: "";
+                    position: absolute;
+                    bottom: -27px;
+                    left: 0;
+                    opacity: 0;
+                    transition: .7s;
+                }
+                &:hover {
+                    &::after{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .header-user{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+    
+            .user-account-div{
+                .user-account{
+                    cursor: default;
+                    padding-right: 25px;
+                    margin-right: 35px;
+                    position: relative;
+                    &::after{
+                        width: 20px;
+                        height: 20px;
+                        background-image: url('../../assets/img/icon-account.svg');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+            }
+            .user-cart-div{
+                .user-cart-link{
+                    padding-right: 25px;
+                    position: relative;
+                    &::after{
+                        width: 20px;
+                        height: 20px;
+                        background-image: url('../../assets/img/icon-cart.svg');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+                .cart-quantity{
+                    position: absolute;
+                    top: -6px;
+                    right: -10px;
+                    width: 15px;
+                    height: 15px;
+                    background-color: $colorTextDarkGrey;
+                    border-radius: 50%;
+                    color: white;
+                    font-size: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        .menu-header-btn{
+            display: none;
+            width: 22px;
+            height: 22px;
+            margin-left: 30px;
+            .btn-menu-open{
+                width: 22px;
+                height: 22px;
+                padding: 0;
+                border: none;
+                background-image: url(../../assets/img/btn-menu-open.svg);
+                background-color: transparent;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 1;
+                transition: .3s;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+            .btn-menu-close{
+                width: 22px;
+                height: 22px;
+                padding: 0;
+                border: none;
+                background-image: url(../../assets/img/btn-menu-close.svg);
+                background-color: transparent;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 1;
+                transition: .3s;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+        .menu-close{
+            margin-left: auto;
+        }
+    }
+    .main-close{
+        background-color: #e9e9e9;
+        &::after{
+            width: 0;
+            height: 0;
+        }
+    }
+}
+.header-fixed{
+    width: 100%;
+    height: 80px;
+    z-index: 5;
+    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.2);
+}
+.menu-header{
+    display: none;
+    padding: 72px 40px 15px 40px;
+    background-color: #e9e9e9;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: auto;
     top: 0;
     left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    z-index: 10;
-    transition: .7s;
+    z-index: 5;
     &::after{
         width: 100%;
         height: 1px;
@@ -23,102 +196,123 @@ header{
         bottom: 0;
         left: 0;
     }
-    .header-logo{
-        width: 120px;
-        height: 40px;
-        background-image: url('../../assets/img/logo.svg');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .header-nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        nav a{
-            color: $colorTextDarkGrey;
-            margin-right: 35px;
-            transition: .3s;
-            position: relative;
-            &::after{
-                width: 100%;
-                height: 1.5px;
-                background-color: $colorTextDarkGrey;
-                content: "";
-                position: absolute;
-                bottom: -27px;
-                left: 0;
-                opacity: 0;
-                transition: .7s;
-            }
-            &:hover {
-                &::after{
-                    opacity: 1;
-                }
-            }
+    a{
+        font-size: 16px;
+        margin: 5px 0;
+        opacity: 1;
+        transition: .3s;
+        &:hover{
+            opacity: 0.7;
         }
     }
-    .header-user{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        position: relative;
+}
 
-        .user-account-div{
-            .user-account-link{
-                cursor: pointer;
-                padding-right: 25px;
-                margin-right: 35px;
-                position: relative;
-                &::after{
-                    width: 20px;
-                    height: 20px;
-                    background-image: url('../../assets/img/icon-account.svg');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                }
+@media (max-width: 1200px) {
+    header {
+        .main-header{
+            .header-nav nav a{
+                margin-right: 25px;
             }
-        }
-        .user-cart-div{
-            .user-cart-link{
-                padding-right: 25px;
-                position: relative;
-                &::after{
-                    width: 20px;
-                    height: 20px;
-                    background-image: url('../../assets/img/icon-cart.svg');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    right: 0;
+            .header-user{
+                .user-account-div {
+                    .user-account{
+                        margin-right: 20px;
+                    }
                 }
-            }
-            .cart-quantity{
-                position: absolute;
-                top: -6px;
-                right: -10px;
-                width: 15px;
-                height: 15px;
-                background-color: $colorTextDarkGrey;
-                border-radius: 50%;
-                color: white;
-                font-size: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
             }
         }
     }
 }
-.header-fixed{
-    width: 100%;
-    height: 80px;
-    z-index: 5;
-    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.2);
+
+@media (max-width: 992px) {
+    header {
+        .main-header{
+            font-size: 16px;
+            .header-logo {
+                width: 100px;
+                height: 25px;
+            }
+            .header-nav nav a{
+                margin-right: 15px;
+            }
+            .header-user{
+                .user-account-div {
+                    .user-account{
+                        padding-right: 20px;
+                        &::after{
+                            width: 17px;
+                            height: 17px;
+                        }
+                    }
+                }
+                .user-cart-div {
+                    .user-cart-link{
+                        padding-right: 20px;
+                        &::after {
+                            width: 17px;
+                            height: 17px;
+                        }
+                    }
+                    .cart-quantity{
+                        right: -12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    header {
+        .main-header{
+            .header-logo {
+                width: 80px;
+                height: 20px;
+            }
+            .header-nav nav a{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header{
+        .main-header{
+            .header-nav{
+                display: none;
+            }
+            .header-user{
+                margin-left: auto;
+            }
+            .menu-header-btn, .menu-close{
+                display: block;
+            }
+        }
+        .menu-header{
+            display: flex;
+        }
+    }
+}
+@media (max-width: 450px) {
+    header {
+        .main-header{
+            .header-user{
+                flex-direction: column;
+                align-items: flex-start;
+                .user-account-div{
+                    margin-bottom: 7px;
+                    .user-account{
+                        margin-right: 0;
+                    }
+                }
+                .user-cart-div{
+                    .cart-quantity{
+                        top: 20px;
+                        right: 22px;
+                    }
+                }
+            }
+        }
+    }
 }

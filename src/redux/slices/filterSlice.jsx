@@ -12,14 +12,8 @@ const initialState = {
         name: 'Popular',
         sortProperty: 'rating',
         open: false,
-        // sortMenu: [
-        //     {name: "Popular", sortProperty: "rating"},
-        //     {name: "Price: low to high", sortProperty: "-price"},
-        //     {name: "Price: high to low", sortProperty: "price"}
-        // ]
     },
     currentPage: 1,
-    // watchesGoods: 1,
     gender: 0,
 };
 
@@ -44,16 +38,12 @@ const filterSlice = createSlice({
             state.sort = action.payload.sort;
             state.currentPage = Number(action.payload.currentPage);
         },
-
-        setGoods(state, action){
-            state.watchesGoods = action.payload;
-        },
         setGender(state, action){
             state.gender = action.payload;
         },
     }
 });
 
-export const { setCategoryId, setSortOpen, setSortType, setCurrentPage, setFilters, setGoods, setGender } = filterSlice.actions;
+export const { setCategoryId, setSortOpen, setSortType, setCurrentPage, setFilters, setGender } = filterSlice.actions;
 
 export default filterSlice.reducer;

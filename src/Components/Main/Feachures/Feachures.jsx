@@ -1,4 +1,5 @@
 import './Feachures.scss';
+import { useNavigate } from 'react-router-dom';
 
 const FirstItems = (props) => {
     return(
@@ -21,6 +22,12 @@ const FinalItems = (props) => {
 const Feachures = (props) => {
     let firstItems = props.feachures.firstItems.map(item => <FirstItems item={item} />)
     let finalItems = props.feachures.finalItems.map(item => <FinalItems item={item} />)
+
+    const navigate = useNavigate();
+    const showAllProducts = () => {
+        navigate('/Shop')
+    }
+
     return (
         <section className="feachures">
 
@@ -60,7 +67,9 @@ const Feachures = (props) => {
                     <div className="jewelry-first-div">
                         <h2>Work of art</h2>
                         <p>When attention to details matter</p>
-                        <button className="btn-shop-now-grey">Shop now</button>
+                        <button onClick={showAllProducts} className="btn-shop-now-grey">
+                            Shop now
+                        </button>
                     </div>
                     <div className="jewelry-second-div">
                         <img src={props.feachures.jewelryInfo.image} alt="product_photo"></img>

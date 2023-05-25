@@ -1,0 +1,66 @@
+@import '../../../../variables.scss';
+
+.react-select-container{
+    margin-top: 10px;
+    .react-select__control{
+        height: 50px;
+        border-color: #dbdbdb;
+        border-radius: 0;
+        box-shadow: none;
+        &:hover {
+            cursor: pointer;
+            border-color: #dbdbdb;
+            height: 50px;
+            box-shadow: none;
+        }
+        // &:focus {
+        //     border-color: #dbdbdb;
+        //     height: 50px;
+        //     box-shadow: none;
+        // }
+        .react-select__value-container{
+            padding: 0 12px;
+            .react-select__single-value{
+                margin: 0;
+            }
+            .react-select__placeholder{
+                margin: 0;
+                color: $colorTextGrey;
+                font-weight: 300;
+            }
+            .react-select__input-container{
+                margin: 0;
+                padding: 0;
+                .react-select__input{
+                    color: $colorTextGrey;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 300;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .react-select__menu{
+        margin: 0;
+        box-shadow: none;
+        .react-select__menu-list{
+            margin: 0;
+            padding: 0;
+            border-color: #dbdbdb;
+            border-style: solid;
+            border-width: 1px;
+            .react-select__option{
+                // background-color: $colorWhite;
+                // color: $colorTextDarkGrey;
+                &:hover{
+                    background-color: #dbdbdb;
+                    cursor: pointer;
+                }
+                // &:focus{
+                //     background-color: #dbdbdb;
+                // }
+            }
+        }
+    }
+}
+

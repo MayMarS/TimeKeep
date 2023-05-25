@@ -7,9 +7,14 @@
     margin-bottom: 30px;
 
     .item-info{
+        width: 40%;
         display: flex;
         align-items: center;
-
+        transition: .3s;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.05);
+        }
         img{
             width: 100px;
             height: auto;
@@ -36,30 +41,32 @@
                 width: 45px;
                 height: 45px;
                 font-size: 30px;
-                color: $colorTextGrey;
-                border: 1px solid $colorTextGrey;
+                color: $colorBlack;
+                background-color: $colorWhite;
+                border: 1px solid $colorBlack;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
                 transition: .3s;
                 &:hover{
-                    background-color: $colorWhite;
+                    color: $colorWhite;
+                    background-color: $colorBlack;
                     border: 1px solid $colorBlack;
-                    color: $colorBlack;
                 }
             }
             .count{
                 margin: 0 15px;
+                width: 20px;
+                text-align: center;
             }
-
-        }
-        .item-sum{
         }
         .btn-remove-item{
+            padding: 0;
             width: 45px;
             height: 45px;
             background-color: $colorTextGrey;
+            border: 1px solid $colorTextGrey;
             background-image: url('../../../../assets/img/close-white.svg');
             background-size: 15px 15px;
             background-repeat: no-repeat;
@@ -68,7 +75,56 @@
             transition: .3s;
             &:hover{
                 background-color: $colorBlack;
+                border: 1px solid $colorBlack;
             }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .cart-item {
+        .item-info{
+            img{
+                width: 80px;
+            }
+            .info {
+                padding-left: 20px;
+                h3{
+                    font-size: 18px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+        .item-wrap {
+            .item-quantity{
+                .btn-quantity{
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+            .btn-remove-item{
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+}
+@media (max-width: 500px) {
+    .cart-item{
+        display: block;
+        .item-info{
+            width: 100%;
+        }
+        .item-wrap{
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+    .cart-btns{
+        button{
+            padding: 0 15px;
         }
     }
 }

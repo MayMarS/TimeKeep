@@ -56,6 +56,7 @@
         left: 0;
         right: 0;
         top: 100%;
+        z-index: 5;
         li{
             width: 100%;
             height: 44px;
@@ -80,6 +81,24 @@
         .active-sort{
             background-color: $colorBlack;
             color: $colorWhite;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .products{
+        .sort-div{
+            margin-top: 20px;
+            .sort-label{
+                padding: 0 20px;
+                width: 200px;
+            }
+            .sort-popup{
+                width: 200px;
+                li{
+                    padding: 0 20px;
+                }
+            }
         }
     }
 }

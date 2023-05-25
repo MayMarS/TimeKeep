@@ -1,5 +1,6 @@
 import './Contact.scss';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import SelectSubject from './Select/Select';
 
 const Contact = () => {
 
@@ -7,6 +8,7 @@ const Contact = () => {
     const [formValues, setFormValues] = useState(initialvalues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
+    const [selectError, setSelectError] = useState("");
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -17,14 +19,8 @@ const Contact = () => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
+        setSelectError("Please choose a subject");
     }
-
-    useEffect(() => {
-        if(Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
-        }
-        window.scrollTo(0,0);
-    }, [formErrors])
 
     const validate = (values) => {
         const errors = {};
@@ -49,6 +45,31 @@ const Contact = () => {
         return errors;
     }
 
+    const optionsSubject = [
+        {value: "stuff", label: "Where is my stuff?"},
+        {value: "returns", label: "Returns"},
+        {value: "edit", label: "Cancel/Edit order"},
+        {value: "marketing", label: "Marketing & PR"},
+        {value: "other", label: "Other"}
+    ]
+
+    const [select, setSelect] = useState("Select a subject");
+    const onSelectItem = (value) => {
+        setSelect(value)
+    }
+
+    // const [open, isOpen] = useState(false);
+    // const  onMenuOpen = (value) => {
+    //     isOpen(value);
+    // }
+
+    // const selects = ["Where is my stuff?", "Returns", "Cancel/Edit order", "Marketing & PR", "Other"];
+    // const [select, setSelect] = useState("Select a subject");
+    // const onSelectItem = (value) => {
+    //     setSelect(value)
+    //     isOpen(false);
+    // }
+
     return(
         <div className="contact">
             <div className="container">
@@ -57,6 +78,8 @@ const Contact = () => {
                 <div className="contact-div">
                     <h3>Send Us An Email:</h3>
                     <p>ASK US ANYTHING! WE'LL GET BACK TO YOU WITHIN 24-48 HOURS.</p>
+
+                    {Object.keys(formErrors).length === 0 && isSubmit ? (alert("Message is sent! We will contact you within 24-48 hours")) : null}
                     <form onSubmit={handleSubmit} id="form">
                         <div className="field">
                             <label for="name-contact">* Name</label>
@@ -70,9 +93,50 @@ const Contact = () => {
                                 value={formValues.email} onChange={handleChange} />
                             <span className="error">{formErrors.email}</span>
                         </div>
+
+                        <div className="field select-div">
+                            <label for="select-subject">* What can we help you with?</label>
+                            <SelectSubject options={optionsSubject} onChange={onSelectItem} id="select-subject"/>
+                            {
+                                select === "Select a subject" && (
+                                    <span className="error">{selectError}</span>
+                                )
+                            }
+                        </div>
+
+                        {/* <div className="field select-div">
+                            <label for="select-subject">* What can we help you with?</label>
+                            <div id="select-subject" onClick={() => onMenuOpen(!open)}>
+                                <span className="select-span">{select}</span>
+                                <span className={!open ? "arrow-span arrow-down" : "arrow-span arrow-up"}></span>
+                            </div>
+                            {
+                                select === "Select a subject" && (
+                                    <span className="error">{selectError}</span>
+                                )
+                            }
+
+                            {
+                                open && (
+                                    <div className="dropdown-select">
+                                        <ul>
+                                            {
+                                                selects.map((name, i) => (
+                                                    <li key={i} className="select-item"
+                                                        onClick={() => onSelectItem(name)}>
+                                                        {name}
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </div>
+                                )
+                            }
+                        </div> */}
+
                         <div className="field field-message">
-                            <label>* Write your message</label>
-                            <textarea type="text" id="message" placeholder="Message..." name="message"
+                            <label for="message-contact">* Write your message</label>
+                            <textarea type="text" id="message-contact" placeholder="Message..." name="message"
                                 value={formValues.message} onChange={handleChange}>
                             </textarea>
                             <span className="error">{formErrors.message}</span>

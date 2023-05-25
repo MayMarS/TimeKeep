@@ -2,7 +2,7 @@
 
 .crumbs-div{
     width: 100%;
-    padding: 90px 0 10px 40px;
+    padding: 10px 40px;
     background-color: $colorWhite;
     display: flex;
 
@@ -12,6 +12,7 @@
         a{
             color: $colorTextGrey;
             font-size: 13px;
+            transition: .3s;
             &:hover{
                 color: $colorTextDarkGrey;
             }
@@ -30,6 +31,27 @@
         }
         &:last-child::after{
             display: none;
+        }
+        .crumb-home{
+            margin-left: 17px;
+            &::before{
+                width: 17px;
+                height: 17px;
+                background-image: url(../../assets/img/home-grey.svg);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                content: "";
+                position: absolute;
+                top: 3px;
+                left: 0;
+                transition: .3s;
+            }
+            &:hover{
+                &::before{
+                    background-image: url(../../assets/img/home-dark-grey.svg);
+                }
+            }
         }
     }
 }

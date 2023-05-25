@@ -88,3 +88,117 @@
         }
     }
 }
+
+@media (max-width: 1200px) {
+    .trending-products{
+        .products-div{
+            .swiper{
+                .swiper-wrapper{
+                    height: 550px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .trending-products{
+        .products-div{
+            .swiper{
+                .swiper-wrapper{
+                    height: 600px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 850px) {
+    .trending-products{
+        .products-div{
+            .swiper{
+                .swiper-wrapper{
+                    height: 550px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .trending-products{
+        .title {
+            font-size: 30px;
+        }
+        .products-div{
+            .swiper{
+                .swiper-wrapper{
+                    height: 660px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 650px) {
+    .trending-products{
+        .products-div{
+            .swiper{
+                .swiper-wrapper{
+                    height: 600px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 576px) {
+    .trending-products{
+        .products-div{
+            .swiper{
+                .swiper-wrapper{
+                    height: 550px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 500px) {
+    .trending-products{
+        .products-div{
+            .swiper{
+                .swiper-wrapper{
+                    height: 500px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    .trending-products{
+        .products-div{
+            .swiper{
+                .swiper-wrapper{
+                    height: 700px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 400px) {
+    .trending-products{
+        .products-div{
+            .swiper{
+                .swiper-wrapper{
+                    height: 620px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 350px) {
+    .trending-products{
+        .products-div{
+            .swiper{
+                .swiper-wrapper{
+                    height: 550px;
+                }
+            }
+        }
+    }
+}

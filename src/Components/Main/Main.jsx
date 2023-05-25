@@ -1,8 +1,8 @@
 import './Main.scss';
-// import { Route, Routes } from 'react-router-dom';
 import PrimeSection from './PrimeSection/PrimeSection';
 import Categories from './Categories/Categories';
 import Trending from './Trending/Trending';
+import ViewedProducts from './ViewedProducts/ViewedProducts';
 import Feachures from './Feachures/Feachures';
 
 const Main = (props) => {
@@ -12,6 +12,7 @@ const Main = (props) => {
             <PrimeSection />
             <Categories /> 
             <Trending />
+            <ViewedProducts />
             <Feachures feachures={props.main.feachures}/>
         </main>
     )

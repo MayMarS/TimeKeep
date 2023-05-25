@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import "swiper/css";
 import "swiper/css/navigation";
-import Product from '../../Route/Products/Product.jsx/Product';
+import Product from '../../Route/Products/Product/Product';
 
 const Trending = () => {
 
@@ -21,7 +21,7 @@ const Trending = () => {
         .then(response => {
             setProducts(response.data)
         })
-    }, [products])
+    }, [])
 
     const navigate = useNavigate();
     const showAllProducts = () => {
@@ -39,8 +39,23 @@ const Trending = () => {
                     </button>
                 </div>
                 <div className="products-div">
-                        <Swiper navigation={true} modules={[Navigation]} speed={1000} slidesPerView={4} spaceBetween={30} 
-                        className="mySwiper">
+                        <Swiper className="mySwiper" navigation={true} modules={[Navigation]} speed={1000} spaceBetween={30}
+                        breakpoints={{
+                            // when window width is >= 350px
+                            350: {
+                            slidesPerView: 1
+                            },
+                            450: {
+                            slidesPerView: 2
+                            },
+                            768: {
+                            slidesPerView: 3
+                            },
+                            992:{
+                            slidesPerView: 4
+                            }
+                        }}
+                        >
                             {
                                 products.map(obj => {
                                     return(

@@ -3,12 +3,6 @@ import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { sortMenu, setSortOpen, setSortType } from '../../../../redux/slices/filterSlice';
 
-// const sortMenu = [
-//     {name: "Popular", sortProperty: "rating"},
-//     {name: "Price: low to high", sortProperty: "-price"},
-//     {name: "Price: high to low", sortProperty: "price"}
-// ]
-
 const Sort = () => {
 
     const sort = useSelector((state) => state.filter.sort);
@@ -34,7 +28,7 @@ const Sort = () => {
     // }, [])
 
     return(
-        <div ref={sortRef} className="sort-div">
+        <div ref={sortRef} className="sort-div sort-category">
             <div className="sort-label" onClick={() => onMenuOpen(!sort.open)}>
                 <p>Sort by</p>
                 <span>{sort.name}</span>

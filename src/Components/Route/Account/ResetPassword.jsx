@@ -1,16 +1,15 @@
 import './ResetPassword.scss';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const ResetPassword = () => {
 
-    const initialvalues = {email: "", password: ""};
-    const [formValues, setFormValues] = useState(initialvalues);
+    const initialValues = {email: ""};
+    const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
-        setFormValues({...formValues, [name]: value});
+        setFormValues({email: e.target.value});
     }
 
     const handleSubmit = (e) => {
@@ -18,13 +17,6 @@ const ResetPassword = () => {
         setFormErrors(validate(formValues));
         setIsSubmit(true);
     }
-
-    useEffect(() => {
-        if(Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
-        }
-        window.scrollTo(0,0);
-    }, [formErrors])
 
     const validate = (values) => {
         const errors = {};
@@ -43,6 +35,8 @@ const ResetPassword = () => {
                 <h3>Welcome back</h3>
                 <p>Sign into your existing account to earn rewards, check existing orders and more.</p>
                 <p className="reset-info">Provide your account email address to receive an email to reset your password.</p>
+
+                {Object.keys(formErrors).length === 0 && isSubmit ? (alert("Please go to your email for Reset Instructions")) : null}
                 <form onSubmit={handleSubmit} id="form">
                     <div className="field">
                         <label for="email-login">* Email</label>

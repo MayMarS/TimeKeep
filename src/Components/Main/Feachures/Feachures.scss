@@ -163,3 +163,128 @@
         }
     }
 }
+
+@media (max-width: 1200px){
+    .feachures{
+        .watches-div{
+            .info{
+                height: auto;
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .feachures{
+        .jewelry-div{
+            .jewelry-first-div{
+                h2{
+                    width: 30%;
+                }
+            }
+            .jewelry-second-div{
+                img{
+                    top: -100px;
+                }
+                .second-div-info{
+                    height: auto;
+                    padding: 0 0 70px 380px;
+                    h3{
+                        margin-top: 15px;
+                    }
+                    p{
+                        line-height: 1.6;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .feachures{
+        .feachures-first-items{
+            display: block;
+            .first-item p {
+                line-height: 1.2;
+                margin-bottom: 25px;
+            }
+        }
+        .watches-div{
+            .info{
+                .text{
+                    width: 60%;
+                    p {
+                        font-size: 15px;
+                        line-height: 1.4;
+                    }
+                    h3{
+                        font-size: 18px;
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+        .jewelry-div{
+            .jewelry-second-div{
+                img{
+                    top: -45px;
+                    width: 250px;
+                }
+                .second-div-info{
+                    padding: 0 0 70px 280px;
+                    p{
+                        line-height: 1.2;
+                    }
+                }
+            }
+        }
+        .features-final-items{
+            .final-item{
+                padding: 0 10px;
+                h4{
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 576px) {
+    .feachures{
+        .watches-div{
+            .info{
+                margin-bottom: 30px;
+                .text{
+                    padding: 0px 20px;
+                    width: 80%;
+                    p {
+                        line-height: 1.2;
+                    }
+                }
+            }
+        }
+        .jewelry-div{
+            .jewelry-first-div{
+                height: 400px;
+                h2{
+                    font-size: 30px;
+                }
+            }
+            .jewelry-second-div{
+                img{
+                    display: none;
+                }
+                .second-div-info{
+                    padding: 0 0 70px 0;
+                    h3{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .features-final-items{
+            flex-direction: column;
+            .final-item{
+                padding: 10px 0;
+            }
+        }
+    }
+}

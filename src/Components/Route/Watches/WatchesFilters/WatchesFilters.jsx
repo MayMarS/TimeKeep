@@ -7,7 +7,6 @@ const genderList = ["All", "Men", "Women"];
 const WatchesFilters = () => {
 
     const gender = useSelector((state) => state.filter.gender);
-    console.log(gender);
 
     const dispatch = useDispatch();
     const onChangeGender = (id) => {

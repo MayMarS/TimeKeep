@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getLocalData } from "../../Components/Route/Cart/Cart";
 
 const initialState = {
-    products: [],
+    products: getLocalData(),
     totalPrice: 0,
 };
 

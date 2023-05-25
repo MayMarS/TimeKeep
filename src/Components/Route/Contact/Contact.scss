@@ -70,6 +70,65 @@
                     font-size: 14px;
                 }
             }
+            .select-div{
+                position: relative;
+
+                #select-subject{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0 12px;
+                    margin-top: 10px;
+                    width: 100%;
+                    height: 50px;
+                    background-color: $colorWhite;
+                    border: 1px solid #dbdbdb;
+                    color: $colorTextGrey;
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 300;
+                    font-size: 18px;
+                    cursor: pointer;
+
+                    .select-span{
+                        display: flex;
+                        align-items: center;
+                        color: $colorTextDarkGrey;
+                        font-size: 18px;
+                    }
+                    .arrow-span{
+                        width: 20px;
+                        height: 20px;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    .arrow-down{
+                        background-image: url(../../../assets/img/arrow-down.svg);
+                    }
+                    .arrow-up{
+                        background-image: url(../../../assets/img/arrow-up.svg);
+                    }
+                }
+
+                .dropdown-select{
+                    width: 100%;
+                    position: absolute;
+                    border: 1px solid #dbdbdb;
+
+                    .select-item{
+                        display: block;
+                        text-transform: none;
+                        padding: 10px 12px;
+                        background-color: $colorWhite;
+                        color: $colorTextDarkGrey;
+                        font-size: 18px;
+                        &:hover{
+                            cursor: pointer;
+                            background-color: #dbdbdb;
+                        }
+                    }
+                }
+            }
             .field-message{
                 textarea{
                     resize: none;
@@ -99,6 +158,34 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .contact{
+        h2{
+            font-size: 30px;
+        }
+        p{
+            font-size: 18px;
+        }
+        .contact-div{
+            width: 80%;
+            h3{
+                font-size: 25px;
+            }
+            p{
+                font-size: 17px;
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    .contact{
+        .contact-div{
+            padding: 30px;
+        }
+    }
+}
+
 
 
 

@@ -1,9 +1,19 @@
 import './Cart.scss';
 import CartItem from './CartItem/CartItem';
 import CartEmpty from './CartEmpty/CartEmpty';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearAll } from '../../../redux/slices/cartSlice';
+
+export const getLocalData = () => {
+    let viewedData = localStorage.getItem("cart");
+    if (viewedData == null){
+        return []
+    } else {
+        return JSON.parse(viewedData)
+    }
+}
 
 const Cart = () => {
 
@@ -19,6 +29,11 @@ const Cart = () => {
     const showAllProducts = () => {
         navigate('/Shop')
     }
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(products));
+        // getLocalData() call in cartSlice.js
+    }, [products])
 
     if(!totalCount) {
         return <CartEmpty/>

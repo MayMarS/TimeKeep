@@ -2,7 +2,7 @@ import './ProductCard.scss';
 import json from '../../../list.json';
 // import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate  } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct } from '../../../redux/slices/cartSlice';
 
@@ -10,6 +10,7 @@ const ProductCard = (props) => {
 
     const [product, setProduct] = useState(false);
     let {productId} = useParams();
+    // console.log(productId);
     let data  = JSON.parse(JSON.stringify(json));
 
     const cartItem = useSelector((state) => state.cart.products.find((obj) => obj.id === product.id));
@@ -48,6 +49,11 @@ const ProductCard = (props) => {
             return setClicked(null);
         }
         setClicked(index);
+    }
+
+    const navigate = useNavigate();
+    const showAllProducts = () => {
+        navigate('/Shop')
     }
 
     return (
@@ -189,7 +195,9 @@ const ProductCard = (props) => {
             <div className="other-title">
                 <h2>{props.product.otherTitle.title}</h2>
                 <h4>{props.product.otherTitle.text}</h4>
-                <button className="btn-shop-now-blue">Shop now</button>
+                <button onClick={showAllProducts} className="btn-shop-now-blue">
+                    Shop now
+                </button>
             </div>
 
         </div>

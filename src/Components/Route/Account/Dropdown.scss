@@ -10,6 +10,7 @@
     .dropdown-menu{
         padding: 60px 30px 30px 30px;
         background-color: $colorWhite;
+        box-shadow: 0px 10px 15px -15px rgba(0, 0, 0, 0.4);
         list-style-type: none;
         
         li:first-child{

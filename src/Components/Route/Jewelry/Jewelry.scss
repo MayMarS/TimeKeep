@@ -17,7 +17,7 @@
         align-items: center;
         .jewelry-title{
             background-color: $colorWhite;
-            width: 22%;
+            width: 30%;
             padding: 25px;
             margin-left: 70px;
             cursor: pointer;
@@ -34,3 +34,36 @@
         }
     }
 }
+
+@media (max-width: 992px) {
+    .jewelry{
+        .jewelry-bg{
+            .jewelry-title{
+                width: 40%;
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .jewelry{
+        .jewelry-bg{
+            .jewelry-title{
+                width: 50%;
+            }
+        }
+    }
+}
+@media (max-width: 576px) {
+    .jewelry{
+        .jewelry-bg{
+            .jewelry-title{
+                width: 60%;
+                margin: 0 auto;
+                h3{
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+

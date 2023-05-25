@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './Header/Header';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import Main from './Main/Main';
+import ChosenCategory from './Main/Categories/ChosenCategory/ChosenCategory';
 import Products from './Route/Products/Products';
 import ProductCard from './Route/ProductCard/ProductCard';
 import Watches from './Route/Watches/Watches';
@@ -22,6 +23,7 @@ function App(props) {
             <Breadcrumbs />
             <Routes>
                 <Route path="/" element={<Main main={props.state.main} />} />
+                <Route path="/Category/:categoryId" element={<ChosenCategory />} /> 
                 <Route path="/Shop" element={<Products />} />
                 <Route path="/Shop/Product/:productId" element={<ProductCard product={props.state.product}/>} /> 
                 <Route path="/Shop/Watches" element={<Watches />} /> 

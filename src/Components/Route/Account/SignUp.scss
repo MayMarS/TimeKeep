@@ -3,7 +3,6 @@
 .account-sign-up{
     padding: 70px 0;
     width: 100%;
-    // background-color: $bgColorGrey;
     color: $colorTextDarkGrey;
     display: flex;
     justify-content: center;
@@ -33,6 +32,7 @@
 
             .field{
                 margin-bottom: 35px;
+                position: relative;
 
                 label{
                     text-transform: uppercase;
@@ -55,6 +55,65 @@
                         font-family: 'Montserrat', sans-serif;
                         font-weight: 300;
                         font-size: 18px;
+                    }
+                }
+                .password-toggle{
+                    position: absolute;
+                    top: 45px;
+                    right: 12px;
+                    width: 24px;
+                    height: 24px;
+                    padding: 0;
+                    background-color: transparent;
+                    border: 0;
+                    outline: 0;
+                    cursor: pointer;
+
+                    .password-toggle_icon{
+                        width: 24px;
+                        height: 24px;
+                        position: absolute;
+                        top: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        opacity: .5;
+                        transition: .3s;
+                    }
+                    .password-toggle_icon_hide{
+                        background-image: url(../../../assets/img/hide-icon.svg);
+                    }
+                    .password-toggle_icon_show{
+                        background-image: url(../../../assets/img/show-icon.svg);
+                    }
+                }
+                .password-toggle_hide{
+                    .password-toggle_icon_hide{
+                        opacity: .5;
+                        transition: .3s;
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                    .password-toggle_icon_show{
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                }
+                .password-toggle_show{
+                    .password-toggle_icon_show{
+                        opacity: .5;
+                        transition: .3s;
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                    .password-toggle_icon_hide{
+                        opacity: 0;
+                        pointer-events: none;
                     }
                 }
                 .error{
@@ -85,7 +144,6 @@
                         top: 1px;
                         left: 0;
                     }
-
                 }
                 input:checked+label{
                     &::before{
@@ -110,6 +168,21 @@
             .btn-sign-up{
                 margin: 0 auto;
             }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .account-sign-up{
+        .sign-up{
+            width: 80%;
+        }
+    }
+}
+@media (max-width: 550px) {
+    .account-sign-up{
+        .sign-up{
+            padding: 30px;
         }
     }
 }

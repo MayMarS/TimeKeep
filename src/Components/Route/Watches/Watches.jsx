@@ -1,24 +1,25 @@
 import './Watches.scss';
 import { useState, useEffect } from 'react';
+import { useSelector} from 'react-redux';
 import axios from 'axios';
-import Product from '../Products/Product.jsx/Product';
+import Product from '../Products/Product/Product';
 import WatchesFilters from './WatchesFilters/WatchesFilters';
 
 const Watches = () => {
 
     const [products, setProducts] = useState([]);
-
-    // const goodsId = useSelector((state) => state.filter.watchesGoods);
+    const genderId = useSelector((state) => state.filter.gender);
 
     useEffect(() => {
+        // axios.get(`https://6433edd7582420e2316f4853.mockapi.io/api/TimeKeep/products?goods=${1}`)
 
-        // const goods = goodsId === 1 ? `goods=${goodsId}` : '';
-        axios.get(`https://6433edd7582420e2316f4853.mockapi.io/api/TimeKeep/products?goods=${1}`
-        )
+        const gender = genderId > 0 ? `category=${genderId}` : `goods=${1}`;
+
+        axios.get(`https://6433edd7582420e2316f4853.mockapi.io/api/TimeKeep/products?${gender}`)
         .then(response => {
             setProducts(response.data)
         })
-    })
+    }, [genderId])
 
     return(
         <section className="watches">
@@ -34,14 +35,12 @@ const Watches = () => {
                     <h4>Choose your ideal watch</h4>
                     <div className="products-btns">
                         <WatchesFilters />
-                        {/* <Sort /> */}
                     </div>
                     <div className="products-div">
                         {
                             products.map((obj) => <Product key={obj.id} {...obj} />)
                         }
                     </div>
-                    {/* <Pagination /> */}
                 </div>
             </div>
         </section>

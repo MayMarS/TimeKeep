@@ -98,7 +98,7 @@
                         background-color: $colorWhite;
                         content: "";
                         position: absolute;
-                        top: 38px;
+                        bottom: -15px;
                         left: 50%;
                         transform: translate(-50%);
                     }
@@ -154,6 +154,111 @@
             font-size: 16px;
             line-height: 1.6;
             margin: 5px 0;
+        }
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .about {
+        .block {
+            .img-div{
+                height: auto;
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .about {
+        .about-title {
+            height: 350px;
+        }
+        .about-div {
+            .about-info{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .concept h2{
+            font-size: 35px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .about {
+        .about-title {
+            height: 250px;
+            h1{
+                font-size: 40px;
+            }
+        }
+        .block {
+            margin-top: 50px;
+            p{
+                line-height: 1.4;
+            }
+        }
+        .about-div, .final-title {
+            margin-top: 50px;
+        }
+        .concept{
+            margin-top: 50px;
+            height: 450px;
+            padding: 0 20px;
+            h2{
+                font-size: 30px;
+            }
+            p{
+                line-height: 1.2;
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .about{
+        .block, .about-div {
+            h2 {
+                font-size: 25px;
+            }
+            p{
+                font-size: 16px;
+            }
+        }
+        .final-title{
+            font-size: 20px;
+            line-height: 1.4;
+        }
+        .concept {
+            h2{
+                font-size: 20px;
+            }
+        }
+    }
+}
+@media (max-width: 576px) {
+    .about {
+        .about-title {
+            height: 200px;
+        }
+        .about-div {
+            .about-info{
+                grid-template-columns: 1fr;
+            }
+        }
+        .concept{
+            height: 350px;
+            padding: 0 10px;
+            h2{
+                width: 60%;
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+            p{
+                width: 60%;
+                font-size: 15px;
+                line-height: 1.1;
+                margin: 2px 0;
+                color: $colorTextDarkGrey;
+            }
         }
     }
 }

@@ -1,11 +1,11 @@
 import './LogIn.scss';
 import { NavLink } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const LogIn = () => {
 
-    const initialvalues = {email: "", password: ""};
-    const [formValues, setFormValues] = useState(initialvalues);
+    const initialValues = {email: "", password: ""};
+    const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
@@ -19,13 +19,6 @@ const LogIn = () => {
         setFormErrors(validate(formValues));
         setIsSubmit(true);
     }
-
-    useEffect(() => {
-        if(Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
-        }
-        window.scrollTo(0,0);
-    }, [formErrors])
 
     const validate = (values) => {
         const errors = {};
@@ -44,14 +37,18 @@ const LogIn = () => {
         return errors;
     }
 
+    const [icon, setIcon] = useState(true);
+    const changeIcon = (value) => {
+        setIcon(value)
+    }
+
     return(
         <div className="account-log-in">
             <div className="log-in">
                 <h3>Welcome back</h3>
                 <p>Sign into your existing account to earn rewards, check existing orders and more.</p>
 
-                {/* {!isSubmit ? (alert("Logged in successfully!")) : null} */}
-
+                {Object.keys(formErrors).length === 0 && isSubmit ? (alert("Logged In successfully!")) : null}
                 <form onSubmit={handleSubmit} id="form">
                     <div className="field">
                         <label for="email-login">* Email</label>
@@ -61,8 +58,13 @@ const LogIn = () => {
                     </div>
                     <div className="field">
                         <label for="password-login">* Password</label>
-                        <input type="password" id="password-login" placeholder="Password" name="password"
-                            value={formValues.password} onChange={handleChange} />
+                        <input type={icon ? "password" : "text"} id="password-login" placeholder="Password" name="password"
+                            value={formValues.password} onChange={handleChange} />           
+                        <button type="button" onClick={() => changeIcon(!icon)}
+                        class={icon ? "password-toggle password-toggle_hide" : "password-toggle password-toggle_show"} >
+                            <span class="password-toggle_icon password-toggle_icon_hide"></span>
+                            <span class="password-toggle_icon password-toggle_icon_show"></span>
+                        </button>
                         <span className="error">{formErrors.password}</span>
                         <NavLink to="/LogIn/Reset-password" className="reset-password-link">Forgot password?</NavLink>
                     </div>

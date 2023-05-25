@@ -1,5 +1,6 @@
 import './Categories.scss';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Categories = () => {
@@ -13,6 +14,11 @@ const Categories = () => {
         })
     }, [])
 
+    const navigate = useNavigate();
+    const chooseCategory = (categoryId) => {
+        navigate(`/Category/${categoryId}`);
+    }
+
     return (
         <section className="categories">
             <div className="container">
@@ -22,7 +28,7 @@ const Categories = () => {
                     {
                         categories.map(category => {
                             return(
-                                <div className="category">
+                                <div className="category" onClick={() => chooseCategory(category.id)}>
                                     <img src={category.image} alt={`img_category_${category.id}`}></img>
                                     <div className="title-div">
                                         <h3>{category.title}</h3>
