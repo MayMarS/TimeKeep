@@ -70,10 +70,10 @@ const Header = (props) => {
                     </>
                 }
                 <div className={!openMenu ? "menu-header-btn" : "menu-header-btn menu-close"}>
-                        <button onClick={toggleMenu} className={!openMenu ? "btn-menu-open" : "btn-menu-close"}></button>
+                    <button onClick={toggleMenu} className={!openMenu ? "btn-menu-open" : "btn-menu-close"}></button>
                 </div>
             </div>
-            <nav className={openMenu ? "menu-header" : ""} onClick={toggleMenu}>
+            <nav className={openMenu ? "menu-header" : "menu-header-hide"} onClick={toggleMenu}>
                 {headerLinks}
             </nav>
         </header>

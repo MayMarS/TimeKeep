@@ -42,6 +42,9 @@ const Footer = (props) => {
                     </form>
                 </div>
             </div>
+            <p className="made-by">
+                © Made by MayMarS - 2023
+            </p>
         </footer>
     )
 }

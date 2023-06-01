@@ -3,19 +3,19 @@
 header{
     width: 100%;
     height: 80px;
+    position: fixed;
+    z-index: 5;
     .main-header{
-        background-color: $colorWhite;
-        color: $colorTextDarkGrey;
-        position: fixed;
         width: 100%;
         height: 80px;
         top: 0;
         left: 0;
+        background-color: $colorWhite;
+        color: $colorTextDarkGrey;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 20px 40px;
-        z-index: 10;
         transition: .7s;
         &::after{
             width: 100%;
@@ -158,6 +158,7 @@ header{
         }
         .menu-close{
             margin-left: auto;
+            z-index: 10;
         }
     }
     .main-close{
@@ -166,6 +167,9 @@ header{
             width: 0;
             height: 0;
         }
+    }
+    .menu-header-hide{
+        display: none;
     }
 }
 .header-fixed{
@@ -176,17 +180,18 @@ header{
 }
 .menu-header{
     display: none;
-    padding: 72px 40px 15px 40px;
-    background-color: #e9e9e9;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     position: fixed;
     width: 100%;
     height: auto;
     top: 0;
     left: 0;
     z-index: 5;
+    padding: 72px 40px 15px 40px;
+    background-color: #e9e9e9;
+    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     &::after{
         width: 100%;
         height: 1px;
@@ -261,7 +266,6 @@ header{
         }
     }
 }
-
 @media (max-width: 850px) {
     header {
         .main-header{
@@ -275,7 +279,6 @@ header{
         }
     }
 }
-
 @media (max-width: 768px) {
     header{
         .main-header{

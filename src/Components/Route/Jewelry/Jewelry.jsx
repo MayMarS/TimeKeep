@@ -4,6 +4,7 @@ import { useSelector} from 'react-redux';
 import axios from 'axios';
 import Product from '../Products/Product/Product';
 import JewelryFilters from './JewelryFilters/JewelryFilters';
+import ViewedProducts from '../../Main/ViewedProducts/ViewedProducts';
 
 const Jewelry = () => {
 
@@ -43,6 +44,7 @@ const Jewelry = () => {
                     </div>
                 </div>
             </div>
+            < ViewedProducts />
         </section>
     )
 }

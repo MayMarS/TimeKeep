@@ -28,7 +28,7 @@ const Sort = () => {
     // }, [])
 
     return(
-        <div ref={sortRef} className="sort-div sort-category">
+        <div ref={sortRef} className="sort-div">
             <div className="sort-label" onClick={() => onMenuOpen(!sort.open)}>
                 <p>Sort by</p>
                 <span>{sort.name}</span>

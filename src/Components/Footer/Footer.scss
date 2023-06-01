@@ -2,7 +2,7 @@
 
 footer{
     background-color: $colorWhite;
-    padding: 70px 50px;
+    padding: 70px 50px 20px 50px;
     color: $colorTextDarkGrey;
     position: relative;
     &::after{
@@ -114,6 +114,11 @@ footer{
                 }
             }
         }
+    }
+    .made-by{
+        text-align: center;
+        font-size: 12px;
+        margin-top: 50px;
     }
 }
 

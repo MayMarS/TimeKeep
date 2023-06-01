@@ -34,7 +34,7 @@
 @media (max-width: 992px) {
     .products{
         .products-btns{
-            display: block;
+            flex-direction: column;
             margin-top: 30px;
         }
         .products-div{

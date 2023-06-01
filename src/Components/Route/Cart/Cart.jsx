@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearAll } from '../../../redux/slices/cartSlice';
+import ViewedProducts from '../../Main/ViewedProducts/ViewedProducts';
 
 export const getLocalData = () => {
     let viewedData = localStorage.getItem("cart");
@@ -17,10 +18,11 @@ export const getLocalData = () => {
 
 const Cart = () => {
 
-    const {products, totalPrice} = useSelector((state) => state.cart);
+    const {products} = useSelector((state) => state.cart);
     const totalCount = products.reduce((sum, item) => sum + item.count, 0);
-    const dispatch = useDispatch();
+    const totalPrice = products.reduce((sum, item) => sum + (item.price * item.count), 0);
 
+    const dispatch = useDispatch();
     const onClickClear = () => {
         dispatch(clearAll())
     }
@@ -40,12 +42,12 @@ const Cart = () => {
     }
 
     return(
+        <>
         <div className="cart">
             <div className="container">
-                <div className="cart-title">
-                    <h2>Your Cart</h2>
-                    <span onClick={onClickClear} className="btn-clear-all">Clear all</span>
-                </div>
+                <h2>Your Cart</h2>
+                <span onClick={onClickClear} className="btn-clear-all">Clear all</span>
+
                 <div className="cart-div">
                     {
                         products.map(item => <CartItem key={item.id} {...item} />)
@@ -61,6 +63,8 @@ const Cart = () => {
                 </div>
             </div>
         </div>
+        < ViewedProducts />
+        </>
     )
 }
 

@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 
     .item-info{
         width: 40%;
@@ -120,11 +120,6 @@
         .item-wrap{
             width: 100%;
             margin-top: 10px;
-        }
-    }
-    .cart-btns{
-        button{
-            padding: 0 15px;
         }
     }
 }

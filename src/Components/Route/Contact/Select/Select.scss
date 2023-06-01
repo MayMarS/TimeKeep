@@ -64,3 +64,24 @@
     }
 }
 
+@media (max-width: 550px) {
+    .react-select-container{
+        .react-select__control{
+            .react-select__value-container{
+                .react-select__single-value {
+                    font-size: 16px;
+                }
+                .react-select__placeholder{
+                    font-size: 14px;
+                }
+            }
+        }
+        .react-select__menu{
+            .react-select__menu-list{
+                .react-select__option{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

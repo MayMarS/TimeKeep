@@ -21,6 +21,9 @@ const ChosenCategory = () => {
         .then(response => {
             setProducts(response.data)
         })
+
+        window.scrollTo(0,0);
+
     }, [categoryId, sortBy, order])
 
     const dispatch = useDispatch();
@@ -37,7 +40,9 @@ const ChosenCategory = () => {
                 <h2 className="title">Shop by Category</h2>
                 <h4>Feel the pulse of time</h4>
                 <div className="products-btns">
-                    <Sort />
+                    <div className="sort-category">
+                        <Sort />
+                    </div>
                 </div>
                 <div className="products-div">
                     {

@@ -47,7 +47,7 @@
                     color: $colorTextDarkGrey;
                     font-family: 'Montserrat', sans-serif;
                     font-size: 18px;
-                    padding-left: 12px;
+                    padding: 0 12px;
                     &:focus{
                         outline: none;
                     }
@@ -57,6 +57,9 @@
                         font-weight: 300;
                         font-size: 18px;
                     }
+                }
+                #password-login{
+                    padding-right: 42px;
                 }
                 .password-toggle{
                     position: absolute;
@@ -147,7 +150,36 @@
 @media (max-width: 550px) {
     .account-log-in{
         .log-in{
-            padding: 30px;
+            padding: 20px;
+            h3{
+                font-size: 27px;
+            }
+            p{
+                font-size: 16px;
+            }
+            form{
+                .field{
+                    label{
+                        font-size: 13px;
+                    }
+                    input{
+                        font-size: 16px;
+                        &::placeholder{
+                            font-size: 14px;
+                        }
+                    }
+                    .error {
+                        font-size: 12px;
+                    }
+                    .reset-password-link{
+                        font-size: 12px;
+                    }
+                }
+                .btn-log-in{
+                    padding: 0px 15px;
+                    font-size: 16px;
+                }
+            }
         }
     }
 }

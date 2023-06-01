@@ -26,7 +26,7 @@ const ViewedProducts = () => {
     }
 
     return(
-        <div className="viewed-products">
+        <section className="viewed-products">
             <div className="container">
                 <h2>Viewed Products</h2>
                 <div className="viewed-div">
@@ -35,7 +35,7 @@ const ViewedProducts = () => {
                     }
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

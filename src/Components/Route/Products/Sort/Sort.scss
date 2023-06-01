@@ -3,7 +3,6 @@
 .sort-div{
     color: $colorBlack;
     position: relative;
-    margin-left: auto;
     .sort-label{
         width: 220px;
         height: 44px;
@@ -88,13 +87,16 @@
 @media (max-width: 992px) {
     .products{
         .sort-div{
-            margin-top: 20px;
+            margin-top: 30px;
             .sort-label{
                 padding: 0 20px;
-                width: 200px;
+                width: 170px;
+                &::after{
+                    right: 15px;
+                }
             }
             .sort-popup{
-                width: 200px;
+                width: 170px;
                 li{
                     padding: 0 20px;
                 }

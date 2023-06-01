@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate  } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct } from '../../../redux/slices/cartSlice';
+import ViewedProducts from '../../Main/ViewedProducts/ViewedProducts';
 
 const ProductCard = (props) => {
 
@@ -29,7 +30,7 @@ const ProductCard = (props) => {
         })
 
         window.scrollTo(0,0);
-    }, [])
+    }, [productId])
 
     const dispatch = useDispatch();
     const onClickAdd = () => {
@@ -144,6 +145,8 @@ const ProductCard = (props) => {
                 </div>
 
             </div>
+
+            < ViewedProducts />
 
             <div className="feachures-items">
                 {

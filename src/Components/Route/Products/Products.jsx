@@ -10,6 +10,7 @@ import FilterCategories from './FilterCategories/FilterCategories';
 import Sort from './Sort/Sort';
 import Pagination from './Pagination/Pagination';
 import Product from './Product/Product';
+import ViewedProducts from '../../Main/ViewedProducts/ViewedProducts';
 
 const Products = () => {
 
@@ -76,6 +77,7 @@ const Products = () => {
     }, [categoryId, sortType, currentPage, navigate])
 
     return (
+        <>
         <section className="products">
             <div className="container">
                 <h2 className="title">Shop all products</h2>
@@ -92,6 +94,8 @@ const Products = () => {
                 <Pagination />
             </div>
         </section>
+        <ViewedProducts />
+        </>
     )
 }
 
