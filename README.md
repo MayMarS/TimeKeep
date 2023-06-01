@@ -2,7 +2,7 @@
 
 The TimeKeep is a non-commercial online store made for learning purpose. It is created in order to browse and purchase watches and jewelry.
 
-Link: maymars.github.io/TimeKeep
+Link: https://maymars.github.io/TimeKeep
 
 ## Project Description
 
