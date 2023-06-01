@@ -1,76 +1,87 @@
-# Getting Started with Create React App
+# Online store on React for a watch brand
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The TimeKeep is a non-commercial online store made for learning purpose. It is created in order to browse and purchase watches and jewelry.
 
-## Available Scripts
+Link: https://maymars.github.io/TimeKeep
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+The online store is made for educational purposes.
+The project aims to provide a user-friendly and visually appealing interface for customers to explore and buy goods.
+It is adaptive for different screen sizes and devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The functionality of the project is made by coding with JSX, reusing components,  applying basic React hooks, switching pages using routes, using Redux for state management, connecting third-party libraries, using REST APIs as database, to imitate server requests and responses.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+HTML5/CSS3, SCSS, JavaScript, JSX, React, React Router, Redux Toolkit, REST API, Git/GitHub
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project's Features
 
-### `npm run build`
+REST APIs are used as database (to generate custom data), to imitate server requests and responses (using https://mockapi.io/, https://my-json-server.typicode.com/).
+This helps to simulate user's purchases of goods.
+Data about products on the main page, product catalog, product details and product categories are displayed in the application through API requests and responses.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Product Catalog: all products with their general data are displayed in the product catalog (Shop tab).
+The details of each product can be viewed by going to the card of a specific product, which contains more detailed characteristics.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Product Filtering and Sorting: products can be filtered and sorted on different criterias:
+  -sorted by popularity, price low to high and high to low.
+  -filtered by product's categories, gender. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Pagination: pagination has been added to the Product Catalog, which makes it possible to switch pages for the user convenience.
 
-### `npm run eject`
+- Shopping Cart: functionality allows users to add items, update quantities, see the total quantity and the total amount of the order. 
+The total number of products added to the cart is also displayed in the upper right corner of the application. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Viewed Products: the application displays the products already viewed by the user in a separate section Viewed Products. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Redux Toolkit: the Redux Toolkit was used to implement such functionallity as: cart, filtering, sort and pagination, list of viewed products.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Local Storage: products added to the cart and viewed products are saved to local storage.
+When the user returns to the app this allows to display in the cart previously added products and to display a list of previously viewed goods.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Form Validation: sections containing fields for user input (Log In, Sign Up, Contact) are checked for the correctness of the entered information, which must match certain patterns. The form is not sent until it is filled out correctly (submission of the form is simulated).
 
-## Learn More
+- Adaptive Design: online store is accessible and looks great across different screen sizes and devices (desktop, tablet and mobile).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In the future, the following features and enhancements are planned:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Product Reviews and Ratings: allow users to leave reviews and ratings for products, providing valuable feedback for other customers.
 
-### Code Splitting
+- Wishlist: implement a wishlist functionality where users can save products for later and easily access them.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Availability: allow users to browse available of goods, make reservations for them.
 
-### Analyzing the Bundle Size
+- Checkout: make the possibillity for checkout which allows users to purchase goods.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- User Authentication: implementing of user login and registration process to secure user data and provide a personalized experiences. 
 
-### Making a Progressive Web App
+## How to Install and Run the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Prerequisites:
+Node.js (from v18)
 
-### Advanced Configuration
+### Installation:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+In a separate terminal:
 
-### Deployment
+1. Clone the repository (main branch):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+git clone --branch main https://github.com/MayMarS/TimeKeep.git
 
-### `npm run build` fails to minify
+2. Navigate to the project directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+cd TimeKeep
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=maymars&show_icons=true&locale=en&layout=compact" alt="maymars" /></p>
+3. Install the dependencies:
 
+npm install
 
+### Running the Application:
+
+npm start
+
+Open your browser and navigate to `http://localhost:3000` to access the web application.
 
 * To work with custom data, APIs, server you can use Firebase, MockAPI, My JSON Server. For detailed instructions follow their official documentation.
